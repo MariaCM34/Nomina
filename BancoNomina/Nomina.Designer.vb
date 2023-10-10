@@ -524,7 +524,7 @@ Partial Class Nomina
         Me.Label73.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label73.Location = New System.Drawing.Point(556, 526)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(20, 16)
+        Me.Label73.Size = New System.Drawing.Size(19, 16)
         Me.Label73.TabIndex = 483
         Me.Label73.Text = "..."
         '
@@ -711,7 +711,7 @@ Partial Class Nomina
         Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label61.Location = New System.Drawing.Point(572, 247)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(48, 16)
+        Me.Label61.Size = New System.Drawing.Size(47, 16)
         Me.Label61.TabIndex = 465
         Me.Label61.Text = "día(s)"
         '
@@ -721,7 +721,7 @@ Partial Class Nomina
         Me.Label62.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label62.Location = New System.Drawing.Point(532, 247)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(20, 16)
+        Me.Label62.Size = New System.Drawing.Size(19, 16)
         Me.Label62.TabIndex = 464
         Me.Label62.Text = "..."
         '
@@ -978,7 +978,7 @@ Partial Class Nomina
         Me.Label77.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label77.Location = New System.Drawing.Point(564, 169)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(48, 16)
+        Me.Label77.Size = New System.Drawing.Size(47, 16)
         Me.Label77.TabIndex = 458
         Me.Label77.Text = "día(s)"
         '
@@ -1139,7 +1139,7 @@ Partial Class Nomina
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.Location = New System.Drawing.Point(538, 168)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(20, 16)
+        Me.Label23.Size = New System.Drawing.Size(19, 16)
         Me.Label23.TabIndex = 200
         Me.Label23.Text = "..."
         '
@@ -1248,7 +1248,7 @@ Partial Class Nomina
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.Location = New System.Drawing.Point(604, 637)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(20, 16)
+        Me.Label31.Size = New System.Drawing.Size(19, 16)
         Me.Label31.TabIndex = 189
         Me.Label31.Text = "..."
         '
@@ -1813,7 +1813,7 @@ Partial Class Nomina
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.Location = New System.Drawing.Point(571, 193)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(48, 16)
+        Me.Label30.Size = New System.Drawing.Size(47, 16)
         Me.Label30.TabIndex = 520
         Me.Label30.Text = "día(s)"
         '
@@ -1876,7 +1876,7 @@ Partial Class Nomina
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.Location = New System.Drawing.Point(545, 192)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(20, 16)
+        Me.Label34.Size = New System.Drawing.Size(19, 16)
         Me.Label34.TabIndex = 517
         Me.Label34.Text = "..."
         '
@@ -1949,7 +1949,7 @@ Partial Class Nomina
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.Location = New System.Drawing.Point(562, 558)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(20, 16)
+        Me.Label38.Size = New System.Drawing.Size(19, 16)
         Me.Label38.TabIndex = 513
         Me.Label38.Text = "..."
         '

@@ -191,6 +191,34 @@ Public Class HojaVida
 
 #Region "Métodos"
 
+#Region "Metodos Hoja de vida Activos"
+    Private Function BuscarEmpleadosActivos()
+        Dim query As String = "SELECT hv.Numero_documento as Documento,hv.Nombre,hv.Apellido,
+                                hv.Ocupacion,c.Fin_contrato, c.Salario_base
+                               FROM Hoja_de_vida hv
+                               INNER JOIN Contrato c on hv.Numero_documento = c.nume_documento
+                               WHERE c.Actividad LIKE 'Activo'
+                               ORDER BY c.Fin_contrato"
+
+        Return cnx.execSelectListHojadevidaActivas(query)
+    End Function
+
+    Private Sub OrganizarListaEmpleadosActivos()
+        ' Obtiene la lista de empleados activos
+        Dim empleadosActivos As List(Of HojadevidaViewModel) = BuscarEmpleadosActivos()
+        For Each empleado In empleadosActivos
+            EmpleadosActivosGrid.Rows.Add(
+                empleado.Documento,
+                empleado.Nombre,
+                empleado.Apellido,
+                empleado.Ocupacion,
+                empleado.FinContrato,
+                empleado.SalarioBase
+                )
+        Next
+
+    End Sub
+#End Region
     'Método para redirigirse al menú
     Private Sub salir()
         Me.Hide()
@@ -1144,6 +1172,18 @@ Public Class HojaVida
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
 
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EmpleadosActivosGrid.CellContentClick
+
+    End Sub
+
+    Private Sub BuscarEmpleados_Click(sender As Object, e As EventArgs) Handles BuscarEmpleados.Click
+        OrganizarListaEmpleadosActivos()
+    End Sub
+
+    Private Sub ExportarActivos_Click(sender As Object, e As EventArgs) Handles ExportarActivos.Click
+        ExportarListaActivos()
     End Sub
 
 #End Region

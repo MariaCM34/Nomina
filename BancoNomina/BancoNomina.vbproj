@@ -80,15 +80,24 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -113,60 +122,152 @@
     <Compile Include="ActualizarAnexo.Designer.vb">
       <DependentUpon>ActualizarAnexo.vb</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarAnexo.vb" />
+    <Compile Include="ActualizarAnexo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ActualizarComunicados.Designer.vb">
       <DependentUpon>ActualizarComunicados.vb</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarComunicados.vb" />
+    <Compile Include="ActualizarComunicados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ActualizarContrato.Designer.vb">
       <DependentUpon>ActualizarContrato.vb</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarContrato.vb" />
+    <Compile Include="ActualizarContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ActualizarDatosPersonales.Designer.vb">
       <DependentUpon>ActualizarDatosPersonales.vb</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarDatosPersonales.vb" />
+    <Compile Include="ActualizarDatosPersonales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ActualizarCertificadoLaboral.Designer.vb">
       <DependentUpon>ActualizarCertificadoLaboral.vb</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarCertificadoLaboral.vb" />
+    <Compile Include="ActualizarCertificadoLaboral.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AjustesPredeterminados.Designer.vb">
       <DependentUpon>AjustesPredeterminados.vb</DependentUpon>
     </Compile>
-    <Compile Include="AjustesPredeterminados.vb" />
+    <Compile Include="AjustesPredeterminados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="Exportar.Designer.vb">
       <DependentUpon>Exportar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exportar.vb" />
+    <Compile Include="Exportar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HojaVida.Designer.vb">
       <DependentUpon>HojaVida.vb</DependentUpon>
     </Compile>
-    <Compile Include="HojaVida.vb" />
+    <Compile Include="HojaVida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoja_de_vida.vb" />
     <Compile Include="HorasExtras.Designer.vb">
       <DependentUpon>HorasExtras.vb</DependentUpon>
     </Compile>
-    <Compile Include="HorasExtras.vb" />
+    <Compile Include="HorasExtras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Imprimir.Designer.vb">
       <DependentUpon>Imprimir.vb</DependentUpon>
     </Compile>
-    <Compile Include="Imprimir.vb" />
+    <Compile Include="Imprimir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Incapacidades.Designer.vb">
       <DependentUpon>Incapacidades.vb</DependentUpon>
     </Compile>
-    <Compile Include="Incapacidades.vb" />
+    <Compile Include="Incapacidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.vb" />
+    <Compile Include="Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login.vb" />
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menum.Designer.vb">
       <DependentUpon>menum.vb</DependentUpon>
     </Compile>
-    <Compile Include="menum.vb" />
+    <Compile Include="menum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Archivos.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BancoHVDB.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoHVDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BancoHVDB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoHVDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BancoHVDB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Certificado_laboral.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Colilla_pago.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comunicados.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contrato.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cuenta_cobro.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departamentos.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Documentos_nomina.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hoja_de_vida.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ingresar.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Liquidaciones.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Municipios.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtrosSi.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Prestamos.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValoresxAnio.vb">
+      <DependentUpon>BancoHVDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -186,23 +287,34 @@
     <Compile Include="Nomina.Designer.vb">
       <DependentUpon>Nomina.vb</DependentUpon>
     </Compile>
-    <Compile Include="Nomina.vb" />
+    <Compile Include="Nomina.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Prestamo.Designer.vb">
       <DependentUpon>Prestamo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Prestamo.vb" />
+    <Compile Include="Prestamo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Recargos.Designer.vb">
       <DependentUpon>Recargos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Recargos.vb" />
+    <Compile Include="Recargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RecuperarContrasena.Designer.vb">
       <DependentUpon>RecuperarContrasena.vb</DependentUpon>
     </Compile>
-    <Compile Include="RecuperarContrasena.vb" />
+    <Compile Include="RecuperarContrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Registrarme.Designer.vb">
       <DependentUpon>Registrarme.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registrarme.vb" />
+    <Compile Include="Registrarme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewmodel\HojadevidaViewModel.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ActualizarAnexo.resx">
@@ -271,6 +383,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BancoNomina_TemporaryKey.pfx" />
+    <EntityDeploy Include="Models\BancoHVDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BancoHVDB.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\BancoHVDB.edmx.diagram">
+      <DependentUpon>BancoHVDB.edmx</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -329,6 +448,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\carpeta.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -336,6 +456,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo-gaia-_1_.ico" />
+    <Content Include="Models\BancoHVDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BancoHVDB.Context.vb</LastGenOutput>
+      <DependentUpon>BancoHVDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BancoHVDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BancoHVDB.edmx</DependentUpon>
+      <LastGenOutput>BancoHVDB.vb</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -348,6 +478,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

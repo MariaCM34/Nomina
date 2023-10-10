@@ -1,0 +1,1331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BancoHVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Archivos">
+          <Key>
+            <PropertyRef Name="Num_documento" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="documento" Type="image" Nullable="false" />
+          <Property Name="RUT" Type="image" Nullable="false" />
+          <Property Name="Tarjeta_profesional" Type="image" Nullable="false" />
+          <Property Name="Hoja_de_vida" Type="image" Nullable="false" />
+          <Property Name="Certificado_academico" Type="image" Nullable="false" />
+          <Property Name="Certificado_laboral" Type="image" Nullable="false" />
+          <Property Name="Certificado_bancario" Type="image" Nullable="false" />
+          <Property Name="Certificado_Eps" Type="image" Nullable="false" />
+          <Property Name="AFP" Type="image" Nullable="false" />
+          <Property Name="Antecedentes" Type="image" Nullable="false" />
+          <Property Name="Examen_ingreso" Type="image" Nullable="false" />
+          <Property Name="Otros" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Certificado_laboral">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Certificado_laboral" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colilla_pago">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_colilla_empleado" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Numero_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salario_base" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="date" Nullable="false" />
+          <Property Name="Fecha_final" Type="date" Nullable="false" />
+          <Property Name="Basico" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_diurnas" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_nocturnas" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_dominicales" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_festivas" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_Hrs" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_nocturno" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_dominical" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_festivo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_Rec" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Incapacidades" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Licencias" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Otros_devengados" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otros_dev" Type="nvarchar" MaxLength="100" />
+          <Property Name="Total_devengado" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salud" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Pension" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Otras_deducciones" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otras_ded" Type="nvarchar" MaxLength="100" />
+          <Property Name="Retencion" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Prestamos" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_deducciones" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Neto_pagar" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comunicados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume_documento" Type="nvarchar" MaxLength="12" />
+          <Property Name="Archivos" Type="image" />
+        </EntityType>
+        <EntityType Name="Contrato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Contrato_laboral" Type="image" Nullable="false" />
+          <Property Name="Tipo_Contrato" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Actividad" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Cargo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Por_concepto_de" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="salario_base" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="tiempo_corte" Type="int" Nullable="false" />
+          <Property Name="Inicio_contrato" Type="date" Nullable="false" />
+          <Property Name="Fin_contrato" Type="date" />
+        </EntityType>
+        <EntityType Name="Cuenta_cobro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salario_base" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="date" Nullable="false" />
+          <Property Name="Fecha_final" Type="date" Nullable="false" />
+          <Property Name="Basico" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Contrato" Type="int" Nullable="false" />
+          <Property Name="Concepto_de" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Otros_devengados" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otros_dev" Type="nvarchar" MaxLength="100" />
+          <Property Name="Otras_deducciones" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otras_ded" Type="nvarchar" MaxLength="100" />
+          <Property Name="Retencion" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Prestamos" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Neto_pagar" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documentos_nomina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Documento" Type="image" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="tipo_contrato" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoja_de_vida">
+          <Key>
+            <PropertyRef Name="Numero_documento" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo_documento" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Numero_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Fecha_expedicion" Type="date" Nullable="false" />
+          <Property Name="Lugar_expedicion" Type="int" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="date" Nullable="false" />
+          <Property Name="Lugar_nacimiento" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Correo_electronico" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado_civil" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Ocupacion" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="Departamento" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="int" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero_de_cuenta" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre_de_contacto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono_contacto" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="EPS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AFP" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ARL" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingresar">
+          <Key>
+            <PropertyRef Name="Numero_Documento" />
+          </Key>
+          <Property Name="Numero_Documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Tipo_Documento" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contrasena" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Liquidaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="date" Nullable="false" />
+          <Property Name="Fecha_final" Type="date" Nullable="false" />
+          <Property Name="Basico" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Descripcion_prestacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prima" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Cesantias" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Int_cesantias" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Vacaciones" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_liquidado" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="departamento_id" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtrosSi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="otrosi" Type="image" Nullable="false" />
+          <Property Name="id_contrato" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prestamos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_documento" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Fecha_prestamo" Type="date" Nullable="false" />
+          <Property Name="Fecha_fin_prestamo" Type="date" Nullable="false" />
+          <Property Name="Metodo_pago" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Valor_prestamo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BancoHV.dbo.Totales_nomina' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Totales_nomina">
+          <Property Name="Total_colilla_pago" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Total_cuenta_cobro" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Total_nominas" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>-->
+        <EntityType Name="ValoresxAnio">
+          <Key>
+            <PropertyRef Name="Anio" />
+          </Key>
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="Salario_minimo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salario_dia" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_diurna" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_nocturna" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_dominical" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_festivo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_nocturno" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_dominical" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_festivo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salud" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Pension" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Hoja_de_v__Ciuda__3F466844">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_v__Lugar__403A8C7D">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Lugar_expedicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_v__Lugar__412EB0B6">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Lugar_nacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_vid__ARL__3E52440B">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipio__nombr__398D8EEE">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="departamento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_archivos">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Archivos" Type="Self.Archivos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Archivos">
+              <PropertyRef Name="Num_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_certificado">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Certificado_laboral" Type="Self.Certificado_laboral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Certificado_laboral">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_colilla">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Colilla_pago" Type="Self.Colilla_pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Colilla_pago">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_comunicados">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="0..1" />
+          <End Role="Comunicados" Type="Self.Comunicados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Comunicados">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contrato">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Contrato">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuenta">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Cuenta_cobro" Type="Self.Cuenta_cobro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Cuenta_cobro">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuenta_contrato">
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+          <End Role="Cuenta_cobro" Type="Self.Cuenta_cobro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contrato">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cuenta_cobro">
+              <PropertyRef Name="Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_liquidacion">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_otrosi">
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+          <End Role="OtrosSi" Type="Self.OtrosSi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contrato">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OtrosSi">
+              <PropertyRef Name="id_contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prestamo">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="Num_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BancoHVModelStoreContainer">
+          <EntitySet Name="Archivos" EntityType="Self.Archivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Certificado_laboral" EntityType="Self.Certificado_laboral" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colilla_pago" EntityType="Self.Colilla_pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comunicados" EntityType="Self.Comunicados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuenta_cobro" EntityType="Self.Cuenta_cobro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documentos_nomina" EntityType="Self.Documentos_nomina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoja_de_vida" EntityType="Self.Hoja_de_vida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingresar" EntityType="Self.Ingresar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Liquidaciones" EntityType="Self.Liquidaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtrosSi" EntityType="Self.OtrosSi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ValoresxAnio" EntityType="Self.ValoresxAnio" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Hoja_de_v__Ciuda__3F466844" Association="Self.FK__Hoja_de_v__Ciuda__3F466844">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_v__Lugar__403A8C7D" Association="Self.FK__Hoja_de_v__Lugar__403A8C7D">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_v__Lugar__412EB0B6" Association="Self.FK__Hoja_de_v__Lugar__412EB0B6">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_vid__ARL__3E52440B" Association="Self.FK__Hoja_de_vid__ARL__3E52440B">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipio__nombr__398D8EEE" Association="Self.FK__Municipio__nombr__398D8EEE">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_archivos" Association="Self.fk_archivos">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Archivos" EntitySet="Archivos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_certificado" Association="Self.fk_certificado">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Certificado_laboral" EntitySet="Certificado_laboral" />
+          </AssociationSet>
+          <AssociationSet Name="fk_colilla" Association="Self.fk_colilla">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Colilla_pago" EntitySet="Colilla_pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_comunicados" Association="Self.fk_comunicados">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Comunicados" EntitySet="Comunicados" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contrato" Association="Self.fk_contrato">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Contrato" EntitySet="Contrato" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuenta" Association="Self.fk_cuenta">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Cuenta_cobro" EntitySet="Cuenta_cobro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuenta_contrato" Association="Self.fk_cuenta_contrato">
+            <End Role="Contrato" EntitySet="Contrato" />
+            <End Role="Cuenta_cobro" EntitySet="Cuenta_cobro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_liquidacion" Association="Self.fk_liquidacion">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_otrosi" Association="Self.fk_otrosi">
+            <End Role="Contrato" EntitySet="Contrato" />
+            <End Role="OtrosSi" EntitySet="OtrosSi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prestamo" Association="Self.fk_prestamo">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoHVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Archivos">
+          <Key>
+            <PropertyRef Name="Num_documento" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Num_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="documento" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="RUT" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Tarjeta_profesional" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Hoja_de_vida" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Certificado_academico" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Certificado_laboral" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Certificado_bancario" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Certificado_Eps" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="AFP" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Antecedentes" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Examen_ingreso" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Otros" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida1" Relationship="Self.fk_archivos" FromRole="Archivos" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Certificado_laboral">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Certificado_laboral1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_certificado" FromRole="Certificado_laboral" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Colilla_pago">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_colilla_empleado" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salario_base" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_final" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Basico" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_diurnas" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_nocturnas" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_dominicales" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hrs_festivas" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_Hrs" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_nocturno" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_dominical" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Rec_festivo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_Rec" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Incapacidades" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Licencias" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Otros_devengados" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otros_dev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Total_devengado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salud" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Pension" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Otras_deducciones" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otras_ded" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Retencion" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Prestamos" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_deducciones" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Neto_pagar" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_colilla" FromRole="Colilla_pago" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Comunicados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Archivos" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_comunicados" FromRole="Comunicados" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Contrato">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contrato_laboral" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Tipo_Contrato" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Actividad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Por_concepto_de" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salario_base" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="tiempo_corte" Type="Int32" Nullable="false" />
+          <Property Name="Inicio_contrato" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fin_contrato" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_contrato" FromRole="Contrato" ToRole="Hoja_de_vida" />
+          <NavigationProperty Name="Cuenta_cobro" Relationship="Self.fk_cuenta_contrato" FromRole="Contrato" ToRole="Cuenta_cobro" />
+          <NavigationProperty Name="OtrosSi" Relationship="Self.fk_otrosi" FromRole="Contrato" ToRole="OtrosSi" />
+        </EntityType>
+        <EntityType Name="Cuenta_cobro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salario_base" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_final" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Basico" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Contrato" Type="Int32" Nullable="false" />
+          <Property Name="Concepto_de" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Otros_devengados" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otros_dev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Otras_deducciones" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Descripcion_otras_ded" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Retencion" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Prestamos" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Neto_pagar" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Contrato1" Relationship="Self.fk_cuenta_contrato" FromRole="Cuenta_cobro" ToRole="Contrato" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_cuenta" FromRole="Cuenta_cobro" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.FK__Hoja_de_vid__ARL__3E52440B" FromRole="Departamentos" ToRole="Hoja_de_vida" />
+          <NavigationProperty Name="Municipios" Relationship="Self.FK__Municipio__nombr__398D8EEE" FromRole="Departamentos" ToRole="Municipios" />
+        </EntityType>
+        <EntityType Name="Documentos_nomina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Documento" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tipo_contrato" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoja_de_vida">
+          <Key>
+            <PropertyRef Name="Numero_documento" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tipo_documento" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_expedicion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Lugar_expedicion" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Lugar_nacimiento" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Celular" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Correo_electronico" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado_civil" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ocupacion" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Departamento" Type="Int32" Nullable="false" />
+          <Property Name="Ciudad" Type="Int32" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero_de_cuenta" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Banco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_de_contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono_contacto" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EPS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AFP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ARL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Archivos" Relationship="Self.fk_archivos" FromRole="Hoja_de_vida" ToRole="Archivos" />
+          <NavigationProperty Name="Certificado_laboral" Relationship="Self.fk_certificado" FromRole="Hoja_de_vida" ToRole="Certificado_laboral" />
+          <NavigationProperty Name="Colilla_pago" Relationship="Self.fk_colilla" FromRole="Hoja_de_vida" ToRole="Colilla_pago" />
+          <NavigationProperty Name="Comunicados" Relationship="Self.fk_comunicados" FromRole="Hoja_de_vida" ToRole="Comunicados" />
+          <NavigationProperty Name="Contrato" Relationship="Self.fk_contrato" FromRole="Hoja_de_vida" ToRole="Contrato" />
+          <NavigationProperty Name="Cuenta_cobro" Relationship="Self.fk_cuenta" FromRole="Hoja_de_vida" ToRole="Cuenta_cobro" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Hoja_de_vid__ARL__3E52440B" FromRole="Hoja_de_vida" ToRole="Departamentos" />
+          <NavigationProperty Name="Municipios" Relationship="Self.FK__Hoja_de_v__Ciuda__3F466844" FromRole="Hoja_de_vida" ToRole="Municipios" />
+          <NavigationProperty Name="Municipios1" Relationship="Self.FK__Hoja_de_v__Lugar__403A8C7D" FromRole="Hoja_de_vida" ToRole="Municipios" />
+          <NavigationProperty Name="Municipios2" Relationship="Self.FK__Hoja_de_v__Lugar__412EB0B6" FromRole="Hoja_de_vida" ToRole="Municipios" />
+          <NavigationProperty Name="Liquidaciones" Relationship="Self.fk_liquidacion" FromRole="Hoja_de_vida" ToRole="Liquidaciones" />
+          <NavigationProperty Name="Prestamos" Relationship="Self.fk_prestamo" FromRole="Hoja_de_vida" ToRole="Prestamos" />
+        </EntityType>
+        <EntityType Name="Ingresar">
+          <Key>
+            <PropertyRef Name="Numero_Documento" />
+          </Key>
+          <Property Name="Numero_Documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tipo_Documento" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Liquidaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_inicial" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_final" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Basico" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Descripcion_prestacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prima" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Cesantias" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Int_cesantias" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Vacaciones" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Total_liquidado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_liquidacion" FromRole="Liquidaciones" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="Municipios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="departamento_id" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Municipio__nombr__398D8EEE" FromRole="Municipios" ToRole="Departamentos" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.FK__Hoja_de_v__Ciuda__3F466844" FromRole="Municipios" ToRole="Hoja_de_vida" />
+          <NavigationProperty Name="Hoja_de_vida1" Relationship="Self.FK__Hoja_de_v__Lugar__403A8C7D" FromRole="Municipios" ToRole="Hoja_de_vida" />
+          <NavigationProperty Name="Hoja_de_vida2" Relationship="Self.FK__Hoja_de_v__Lugar__412EB0B6" FromRole="Municipios" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="OtrosSi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="otrosi" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="id_contrato" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contrato" Relationship="Self.fk_otrosi" FromRole="OtrosSi" ToRole="Contrato" />
+        </EntityType>
+        <EntityType Name="Prestamos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Num_documento" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_prestamo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_fin_prestamo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Metodo_pago" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Valor_prestamo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Hoja_de_vida" Relationship="Self.fk_prestamo" FromRole="Prestamos" ToRole="Hoja_de_vida" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ValoresxAnio">
+          <Key>
+            <PropertyRef Name="Anio" />
+          </Key>
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="Salario_minimo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aux_transporte" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salario_dia" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_diurna" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_nocturna" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_dominical" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Hora_festivo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_nocturno" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_dominical" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Recargo_festivo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Salud" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Pension" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_archivos">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Archivos" Type="Self.Archivos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Archivos">
+              <PropertyRef Name="Num_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_certificado">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Certificado_laboral" Type="Self.Certificado_laboral" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Certificado_laboral">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_colilla">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Colilla_pago" Type="Self.Colilla_pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Colilla_pago">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_comunicados">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="0..1" />
+          <End Role="Comunicados" Type="Self.Comunicados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Comunicados">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contrato">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Contrato">
+              <PropertyRef Name="Nume_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuenta_contrato">
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+          <End Role="Cuenta_cobro" Type="Self.Cuenta_cobro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contrato">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cuenta_cobro">
+              <PropertyRef Name="Contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_otrosi">
+          <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+          <End Role="OtrosSi" Type="Self.OtrosSi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contrato">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OtrosSi">
+              <PropertyRef Name="id_contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cuenta">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Cuenta_cobro" Type="Self.Cuenta_cobro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Cuenta_cobro">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_vid__ARL__3E52440B">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Municipio__nombr__398D8EEE">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Municipios">
+              <PropertyRef Name="departamento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_v__Ciuda__3F466844">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Ciudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_v__Lugar__403A8C7D">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Lugar_expedicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Hoja_de_v__Lugar__412EB0B6">
+          <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Hoja_de_vida">
+              <PropertyRef Name="Lugar_nacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_liquidacion">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
+              <PropertyRef Name="Numero_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prestamo">
+          <End Role="Hoja_de_vida" Type="Self.Hoja_de_vida" Multiplicity="1" />
+          <End Role="Prestamos" Type="Self.Prestamos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hoja_de_vida">
+              <PropertyRef Name="Numero_documento" />
+            </Principal>
+            <Dependent Role="Prestamos">
+              <PropertyRef Name="Num_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BancoHVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archivos" EntityType="Self.Archivos" />
+          <EntitySet Name="Certificado_laboral" EntityType="Self.Certificado_laboral" />
+          <EntitySet Name="Colilla_pago" EntityType="Self.Colilla_pago" />
+          <EntitySet Name="Comunicados" EntityType="Self.Comunicados" />
+          <EntitySet Name="Contrato" EntityType="Self.Contrato" />
+          <EntitySet Name="Cuenta_cobro" EntityType="Self.Cuenta_cobro" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+          <EntitySet Name="Documentos_nomina" EntityType="Self.Documentos_nomina" />
+          <EntitySet Name="Hoja_de_vida" EntityType="Self.Hoja_de_vida" />
+          <EntitySet Name="Ingresar" EntityType="Self.Ingresar" />
+          <EntitySet Name="Liquidaciones" EntityType="Self.Liquidaciones" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipios" />
+          <EntitySet Name="OtrosSi" EntityType="Self.OtrosSi" />
+          <EntitySet Name="Prestamos" EntityType="Self.Prestamos" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="ValoresxAnio" EntityType="Self.ValoresxAnio" />
+          <AssociationSet Name="fk_archivos" Association="Self.fk_archivos">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Archivos" EntitySet="Archivos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_certificado" Association="Self.fk_certificado">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Certificado_laboral" EntitySet="Certificado_laboral" />
+          </AssociationSet>
+          <AssociationSet Name="fk_colilla" Association="Self.fk_colilla">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Colilla_pago" EntitySet="Colilla_pago" />
+          </AssociationSet>
+          <AssociationSet Name="fk_comunicados" Association="Self.fk_comunicados">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Comunicados" EntitySet="Comunicados" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contrato" Association="Self.fk_contrato">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Contrato" EntitySet="Contrato" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuenta_contrato" Association="Self.fk_cuenta_contrato">
+            <End Role="Contrato" EntitySet="Contrato" />
+            <End Role="Cuenta_cobro" EntitySet="Cuenta_cobro" />
+          </AssociationSet>
+          <AssociationSet Name="fk_otrosi" Association="Self.fk_otrosi">
+            <End Role="Contrato" EntitySet="Contrato" />
+            <End Role="OtrosSi" EntitySet="OtrosSi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cuenta" Association="Self.fk_cuenta">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Cuenta_cobro" EntitySet="Cuenta_cobro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_vid__ARL__3E52440B" Association="Self.FK__Hoja_de_vid__ARL__3E52440B">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Municipio__nombr__398D8EEE" Association="Self.FK__Municipio__nombr__398D8EEE">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Municipios" EntitySet="Municipios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_v__Ciuda__3F466844" Association="Self.FK__Hoja_de_v__Ciuda__3F466844">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_v__Lugar__403A8C7D" Association="Self.FK__Hoja_de_v__Lugar__403A8C7D">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Hoja_de_v__Lugar__412EB0B6" Association="Self.FK__Hoja_de_v__Lugar__412EB0B6">
+            <End Role="Municipios" EntitySet="Municipios" />
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+          </AssociationSet>
+          <AssociationSet Name="fk_liquidacion" Association="Self.fk_liquidacion">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prestamo" Association="Self.fk_prestamo">
+            <End Role="Hoja_de_vida" EntitySet="Hoja_de_vida" />
+            <End Role="Prestamos" EntitySet="Prestamos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BancoHVModelStoreContainer" CdmEntityContainer="BancoHVEntities">
+          <EntitySetMapping Name="Archivos">
+            <EntityTypeMapping TypeName="BancoHVModel.Archivos">
+              <MappingFragment StoreEntitySet="Archivos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Num_documento" ColumnName="Num_documento" />
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="Tarjeta_profesional" ColumnName="Tarjeta_profesional" />
+                <ScalarProperty Name="Hoja_de_vida" ColumnName="Hoja_de_vida" />
+                <ScalarProperty Name="Certificado_academico" ColumnName="Certificado_academico" />
+                <ScalarProperty Name="Certificado_laboral" ColumnName="Certificado_laboral" />
+                <ScalarProperty Name="Certificado_bancario" ColumnName="Certificado_bancario" />
+                <ScalarProperty Name="Certificado_Eps" ColumnName="Certificado_Eps" />
+                <ScalarProperty Name="AFP" ColumnName="AFP" />
+                <ScalarProperty Name="Antecedentes" ColumnName="Antecedentes" />
+                <ScalarProperty Name="Examen_ingreso" ColumnName="Examen_ingreso" />
+                <ScalarProperty Name="Otros" ColumnName="Otros" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Certificado_laboral">
+            <EntityTypeMapping TypeName="BancoHVModel.Certificado_laboral">
+              <MappingFragment StoreEntitySet="Certificado_laboral">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nume_documento" ColumnName="Nume_documento" />
+                <ScalarProperty Name="Certificado_laboral1" ColumnName="Certificado_laboral" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colilla_pago">
+            <EntityTypeMapping TypeName="BancoHVModel.Colilla_pago">
+              <MappingFragment StoreEntitySet="Colilla_pago">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_colilla_empleado" ColumnName="id_colilla_empleado" />
+                <ScalarProperty Name="Numero_documento" ColumnName="Numero_documento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Salario_base" ColumnName="Salario_base" />
+                <ScalarProperty Name="Fecha_inicial" ColumnName="Fecha_inicial" />
+                <ScalarProperty Name="Fecha_final" ColumnName="Fecha_final" />
+                <ScalarProperty Name="Basico" ColumnName="Basico" />
+                <ScalarProperty Name="Aux_transporte" ColumnName="Aux_transporte" />
+                <ScalarProperty Name="Hrs_diurnas" ColumnName="Hrs_diurnas" />
+                <ScalarProperty Name="Hrs_nocturnas" ColumnName="Hrs_nocturnas" />
+                <ScalarProperty Name="Hrs_dominicales" ColumnName="Hrs_dominicales" />
+                <ScalarProperty Name="Hrs_festivas" ColumnName="Hrs_festivas" />
+                <ScalarProperty Name="Total_Hrs" ColumnName="Total_Hrs" />
+                <ScalarProperty Name="Rec_nocturno" ColumnName="Rec_nocturno" />
+                <ScalarProperty Name="Rec_dominical" ColumnName="Rec_dominical" />
+                <ScalarProperty Name="Rec_festivo" ColumnName="Rec_festivo" />
+                <ScalarProperty Name="Total_Rec" ColumnName="Total_Rec" />
+                <ScalarProperty Name="Incapacidades" ColumnName="Incapacidades" />
+                <ScalarProperty Name="Licencias" ColumnName="Licencias" />
+                <ScalarProperty Name="Otros_devengados" ColumnName="Otros_devengados" />
+                <ScalarProperty Name="Descripcion_otros_dev" ColumnName="Descripcion_otros_dev" />
+                <ScalarProperty Name="Total_devengado" ColumnName="Total_devengado" />
+                <ScalarProperty Name="Salud" ColumnName="Salud" />
+                <ScalarProperty Name="Pension" ColumnName="Pension" />
+                <ScalarProperty Name="Otras_deducciones" ColumnName="Otras_deducciones" />
+                <ScalarProperty Name="Descripcion_otras_ded" ColumnName="Descripcion_otras_ded" />
+                <ScalarProperty Name="Retencion" ColumnName="Retencion" />
+                <ScalarProperty Name="Prestamos" ColumnName="Prestamos" />
+                <ScalarProperty Name="Total_deducciones" ColumnName="Total_deducciones" />
+                <ScalarProperty Name="Neto_pagar" ColumnName="Neto_pagar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comunicados">
+            <EntityTypeMapping TypeName="BancoHVModel.Comunicados">
+              <MappingFragment StoreEntitySet="Comunicados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nume_documento" ColumnName="Nume_documento" />
+                <ScalarProperty Name="Archivos" ColumnName="Archivos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contrato">
+            <EntityTypeMapping TypeName="BancoHVModel.Contrato">
+              <MappingFragment StoreEntitySet="Contrato">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nume_documento" ColumnName="Nume_documento" />
+                <ScalarProperty Name="Contrato_laboral" ColumnName="Contrato_laboral" />
+                <ScalarProperty Name="Tipo_Contrato" ColumnName="Tipo_Contrato" />
+                <ScalarProperty Name="Actividad" ColumnName="Actividad" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Por_concepto_de" ColumnName="Por_concepto_de" />
+                <ScalarProperty Name="salario_base" ColumnName="salario_base" />
+                <ScalarProperty Name="tiempo_corte" ColumnName="tiempo_corte" />
+                <ScalarProperty Name="Inicio_contrato" ColumnName="Inicio_contrato" />
+                <ScalarProperty Name="Fin_contrato" ColumnName="Fin_contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuenta_cobro">
+            <EntityTypeMapping TypeName="BancoHVModel.Cuenta_cobro">
+              <MappingFragment StoreEntitySet="Cuenta_cobro">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Numero_documento" ColumnName="Numero_documento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Salario_base" ColumnName="Salario_base" />
+                <ScalarProperty Name="Fecha_inicial" ColumnName="Fecha_inicial" />
+                <ScalarProperty Name="Fecha_final" ColumnName="Fecha_final" />
+                <ScalarProperty Name="Basico" ColumnName="Basico" />
+                <ScalarProperty Name="Contrato" ColumnName="Contrato" />
+                <ScalarProperty Name="Concepto_de" ColumnName="Concepto_de" />
+                <ScalarProperty Name="Otros_devengados" ColumnName="Otros_devengados" />
+                <ScalarProperty Name="Descripcion_otros_dev" ColumnName="Descripcion_otros_dev" />
+                <ScalarProperty Name="Otras_deducciones" ColumnName="Otras_deducciones" />
+                <ScalarProperty Name="Descripcion_otras_ded" ColumnName="Descripcion_otras_ded" />
+                <ScalarProperty Name="Retencion" ColumnName="Retencion" />
+                <ScalarProperty Name="Prestamos" ColumnName="Prestamos" />
+                <ScalarProperty Name="Neto_pagar" ColumnName="Neto_pagar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="BancoHVModel.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos_nomina">
+            <EntityTypeMapping TypeName="BancoHVModel.Documentos_nomina">
+              <MappingFragment StoreEntitySet="Documentos_nomina">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="tipo_contrato" ColumnName="tipo_contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoja_de_vida">
+            <EntityTypeMapping TypeName="BancoHVModel.Hoja_de_vida">
+              <MappingFragment StoreEntitySet="Hoja_de_vida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Tipo_documento" ColumnName="Tipo_documento" />
+                <ScalarProperty Name="Numero_documento" ColumnName="Numero_documento" />
+                <ScalarProperty Name="Fecha_expedicion" ColumnName="Fecha_expedicion" />
+                <ScalarProperty Name="Lugar_expedicion" ColumnName="Lugar_expedicion" />
+                <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+                <ScalarProperty Name="Lugar_nacimiento" ColumnName="Lugar_nacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Correo_electronico" ColumnName="Correo_electronico" />
+                <ScalarProperty Name="Estado_civil" ColumnName="Estado_civil" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="Numero_de_cuenta" ColumnName="Numero_de_cuenta" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="Nombre_de_contacto" ColumnName="Nombre_de_contacto" />
+                <ScalarProperty Name="Telefono_contacto" ColumnName="Telefono_contacto" />
+                <ScalarProperty Name="EPS" ColumnName="EPS" />
+                <ScalarProperty Name="AFP" ColumnName="AFP" />
+                <ScalarProperty Name="ARL" ColumnName="ARL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingresar">
+            <EntityTypeMapping TypeName="BancoHVModel.Ingresar">
+              <MappingFragment StoreEntitySet="Ingresar">
+                <ScalarProperty Name="Numero_Documento" ColumnName="Numero_Documento" />
+                <ScalarProperty Name="Tipo_Documento" ColumnName="Tipo_Documento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Liquidaciones">
+            <EntityTypeMapping TypeName="BancoHVModel.Liquidaciones">
+              <MappingFragment StoreEntitySet="Liquidaciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Numero_documento" ColumnName="Numero_documento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Fecha_inicial" ColumnName="Fecha_inicial" />
+                <ScalarProperty Name="Fecha_final" ColumnName="Fecha_final" />
+                <ScalarProperty Name="Basico" ColumnName="Basico" />
+                <ScalarProperty Name="Aux_transporte" ColumnName="Aux_transporte" />
+                <ScalarProperty Name="Descripcion_prestacion" ColumnName="Descripcion_prestacion" />
+                <ScalarProperty Name="Prima" ColumnName="Prima" />
+                <ScalarProperty Name="Cesantias" ColumnName="Cesantias" />
+                <ScalarProperty Name="Int_cesantias" ColumnName="Int_cesantias" />
+                <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+                <ScalarProperty Name="Total_liquidado" ColumnName="Total_liquidado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="BancoHVModel.Municipios">
+              <MappingFragment StoreEntitySet="Municipios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="departamento_id" ColumnName="departamento_id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtrosSi">
+            <EntityTypeMapping TypeName="BancoHVModel.OtrosSi">
+              <MappingFragment StoreEntitySet="OtrosSi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="otrosi" ColumnName="otrosi" />
+                <ScalarProperty Name="id_contrato" ColumnName="id_contrato" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prestamos">
+            <EntityTypeMapping TypeName="BancoHVModel.Prestamos">
+              <MappingFragment StoreEntitySet="Prestamos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Num_documento" ColumnName="Num_documento" />
+                <ScalarProperty Name="Fecha_prestamo" ColumnName="Fecha_prestamo" />
+                <ScalarProperty Name="Fecha_fin_prestamo" ColumnName="Fecha_fin_prestamo" />
+                <ScalarProperty Name="Metodo_pago" ColumnName="Metodo_pago" />
+                <ScalarProperty Name="Valor_prestamo" ColumnName="Valor_prestamo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BancoHVModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValoresxAnio">
+            <EntityTypeMapping TypeName="BancoHVModel.ValoresxAnio">
+              <MappingFragment StoreEntitySet="ValoresxAnio">
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Salario_minimo" ColumnName="Salario_minimo" />
+                <ScalarProperty Name="Aux_transporte" ColumnName="Aux_transporte" />
+                <ScalarProperty Name="Salario_dia" ColumnName="Salario_dia" />
+                <ScalarProperty Name="Hora_diurna" ColumnName="Hora_diurna" />
+                <ScalarProperty Name="Hora_nocturna" ColumnName="Hora_nocturna" />
+                <ScalarProperty Name="Hora_dominical" ColumnName="Hora_dominical" />
+                <ScalarProperty Name="Hora_festivo" ColumnName="Hora_festivo" />
+                <ScalarProperty Name="Recargo_nocturno" ColumnName="Recargo_nocturno" />
+                <ScalarProperty Name="Recargo_dominical" ColumnName="Recargo_dominical" />
+                <ScalarProperty Name="Recargo_festivo" ColumnName="Recargo_festivo" />
+                <ScalarProperty Name="Salud" ColumnName="Salud" />
+                <ScalarProperty Name="Pension" ColumnName="Pension" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

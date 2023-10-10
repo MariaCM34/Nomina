@@ -1,14 +1,19 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Conexion
 
 #Region "Variables"
     'Creación de variables para la conexion a la BD
-    Dim cadena As String = "Data Source=DESKTOP-VLO8ANU;Initial Catalog=BancoHV;Integrated Security=True"
+    Dim cadena As String = "Data Source=MyDesktop;Initial Catalog=BancoHV;Integrated Security=True"
+    Dim context As New BancoHVEntities()
     Public conexion As New SqlConnection(cadena)
+
 #End Region
 
 #Region "Métodos"
+
+
 
     'Método para ejecutar select que retorna solamente 1 valor
     Function execSelect(consulta As String)
@@ -25,6 +30,31 @@ Public Class Conexion
                 End If
             End Using
             Return 0
+        Catch ex As Exception
+            Return 0
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Function execSelectListHojadevidaActivas(consulta As String)
+        Try
+            conexion.Open()
+            Dim command = New SqlCommand(consulta, conexion)
+            Dim reader = command.ExecuteReader()
+            Dim cvs = New List(Of HojadevidaViewModel)
+            While reader.Read()
+                Dim hv = New HojadevidaViewModel()
+                hv.Documento = reader("documento")
+                hv.Nombre = reader("Nombre")
+                hv.Apellido = reader("Apellido")
+                hv.Ocupacion = reader("Ocupacion")
+                hv.FinContrato = reader("Fin_contrato")
+                hv.SalarioBase = reader("Salario_base")
+                cvs.Add(hv)
+            End While
+            conexion.Close()
+            Return cvs
         Catch ex As Exception
             Return 0
         Finally

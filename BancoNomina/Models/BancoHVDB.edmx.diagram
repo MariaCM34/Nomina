@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2b06173c1b847d4bde2dc5d595d5594" Name="Diagram1">
+        <EntityTypeShape EntityType="BancoHVModel.Archivos" Width="1.5" PointX="7.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Certificado_laboral" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Colilla_pago" Width="1.5" PointX="7.5" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Comunicados" Width="1.5" PointX="7.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Contrato" Width="1.5" PointX="7.5" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Cuenta_cobro" Width="1.5" PointX="9.75" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Departamentos" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Documentos_nomina" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Hoja_de_vida" Width="1.5" PointX="5.25" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Ingresar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Liquidaciones" Width="1.5" PointX="7.5" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Municipios" Width="1.5" PointX="3" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.OtrosSi" Width="1.5" PointX="9.75" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.Prestamos" Width="1.5" PointX="7.5" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoHVModel.ValoresxAnio" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="BancoHVModel.fk_archivos" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_certificado" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_colilla" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_comunicados" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_cuenta_contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_otrosi" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.FK__Hoja_de_vid__ARL__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.FK__Municipio__nombr__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.FK__Hoja_de_v__Ciuda__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.FK__Hoja_de_v__Lugar__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.FK__Hoja_de_v__Lugar__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_liquidacion" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoHVModel.fk_prestamo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

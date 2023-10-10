@@ -190,6 +190,7 @@ Partial Class HojaVida
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
@@ -220,7 +221,17 @@ Partial Class HojaVida
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.ExportarActivos = New System.Windows.Forms.Button()
+        Me.BuscarEmpleados = New System.Windows.Forms.Button()
+        Me.EmpleadosActivosGrid = New System.Windows.Forms.DataGridView()
+        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaFinContrato = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SeleccionarColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabPage7.SuspendLayout()
         CType(Me.AxAcroPDF5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
@@ -234,6 +245,8 @@ Partial Class HojaVida
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
+        CType(Me.EmpleadosActivosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabPage7
@@ -2140,6 +2153,13 @@ Partial Class HojaVida
         Me.TextBox2.Size = New System.Drawing.Size(268, 20)
         Me.TextBox2.TabIndex = 2
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(204, 7)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(268, 20)
+        Me.TextBox1.TabIndex = 1
+        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -2458,18 +2478,106 @@ Partial Class HojaVida
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
+        Me.TabControl1.Controls.Add(Me.TabPage8)
         Me.TabControl1.Location = New System.Drawing.Point(6, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(733, 518)
         Me.TabControl1.TabIndex = 0
         '
-        'TextBox1
+        'TabPage8
         '
-        Me.TextBox1.Location = New System.Drawing.Point(204, 7)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(268, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TabPage8.Controls.Add(Me.ExportarActivos)
+        Me.TabPage8.Controls.Add(Me.BuscarEmpleados)
+        Me.TabPage8.Controls.Add(Me.EmpleadosActivosGrid)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Size = New System.Drawing.Size(725, 492)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "Empleados Activos"
+        Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'ExportarActivos
+        '
+        Me.ExportarActivos.BackColor = System.Drawing.Color.Green
+        Me.ExportarActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ExportarActivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExportarActivos.ForeColor = System.Drawing.Color.White
+        Me.ExportarActivos.Location = New System.Drawing.Point(326, 441)
+        Me.ExportarActivos.Name = "ExportarActivos"
+        Me.ExportarActivos.Size = New System.Drawing.Size(87, 30)
+        Me.ExportarActivos.TabIndex = 150
+        Me.ExportarActivos.Text = "Exportar"
+        Me.ExportarActivos.UseVisualStyleBackColor = False
+        '
+        'BuscarEmpleados
+        '
+        Me.BuscarEmpleados.BackColor = System.Drawing.Color.Green
+        Me.BuscarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BuscarEmpleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BuscarEmpleados.ForeColor = System.Drawing.Color.White
+        Me.BuscarEmpleados.Location = New System.Drawing.Point(326, 24)
+        Me.BuscarEmpleados.Name = "BuscarEmpleados"
+        Me.BuscarEmpleados.Size = New System.Drawing.Size(87, 30)
+        Me.BuscarEmpleados.TabIndex = 149
+        Me.BuscarEmpleados.Text = "Buscar"
+        Me.BuscarEmpleados.UseVisualStyleBackColor = False
+        '
+        'EmpleadosActivosGrid
+        '
+        Me.EmpleadosActivosGrid.AllowUserToAddRows = False
+        Me.EmpleadosActivosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.EmpleadosActivosGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Documento, Me.Nombre, Me.Apellido, Me.Cargo, Me.FechaFinContrato, Me.Total, Me.SeleccionarColumn})
+        Me.EmpleadosActivosGrid.Location = New System.Drawing.Point(26, 82)
+        Me.EmpleadosActivosGrid.MultiSelect = False
+        Me.EmpleadosActivosGrid.Name = "EmpleadosActivosGrid"
+        Me.EmpleadosActivosGrid.ReadOnly = True
+        Me.EmpleadosActivosGrid.RowHeadersVisible = False
+        Me.EmpleadosActivosGrid.Size = New System.Drawing.Size(679, 353)
+        Me.EmpleadosActivosGrid.TabIndex = 148
+        '
+        'Documento
+        '
+        Me.Documento.HeaderText = "Documento"
+        Me.Documento.Name = "Documento"
+        Me.Documento.ReadOnly = True
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre(s)"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        Me.Apellido.ReadOnly = True
+        '
+        'Cargo
+        '
+        Me.Cargo.HeaderText = "Cargo"
+        Me.Cargo.Name = "Cargo"
+        Me.Cargo.ReadOnly = True
+        '
+        'FechaFinContrato
+        '
+        Me.FechaFinContrato.HeaderText = "Fin de Contrato"
+        Me.FechaFinContrato.Name = "FechaFinContrato"
+        Me.FechaFinContrato.ReadOnly = True
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
+        Me.Total.ReadOnly = True
+        '
+        'SeleccionarColumn
+        '
+        Me.SeleccionarColumn.HeaderText = "Seleccionar"
+        Me.SeleccionarColumn.Name = "SeleccionarColumn"
+        Me.SeleccionarColumn.ReadOnly = True
+        Me.SeleccionarColumn.Width = 80
         '
         'HojaVida
         '
@@ -2501,6 +2609,8 @@ Partial Class HojaVida
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage8.ResumeLayout(False)
+        CType(Me.EmpleadosActivosGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2702,4 +2812,15 @@ Partial Class HojaVida
     Friend WithEvents Label86 As Label
     Friend WithEvents Label87 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents EmpleadosActivosGrid As DataGridView
+    Friend WithEvents BuscarEmpleados As Button
+    Friend WithEvents Documento As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Apellido As DataGridViewTextBoxColumn
+    Friend WithEvents Cargo As DataGridViewTextBoxColumn
+    Friend WithEvents FechaFinContrato As DataGridViewTextBoxColumn
+    Friend WithEvents Total As DataGridViewTextBoxColumn
+    Friend WithEvents SeleccionarColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents ExportarActivos As Button
 End Class
