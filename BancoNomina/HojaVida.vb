@@ -218,6 +218,15 @@ Public Class HojaVida
         Next
 
     End Sub
+
+    Private Sub ExportarListaActivos()
+        Try
+            Dim ruta
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 #End Region
     'Método para redirigirse al menú
     Private Sub salir()

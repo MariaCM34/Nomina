@@ -44,13 +44,6 @@ Public Class Nomina
         Recargos.Show()
     End Sub
 
-    'Redirigirse a la plantilla incapacidades
-    Private Sub TextBox14_Click(sender As Object, e As EventArgs) Handles TextBox14.Click
-        Me.Hide()
-        Incapacidades.vlrNomina = (Convert.ToSingle(TextBox2.Text) / 30) * 15
-        Incapacidades.Show()
-    End Sub
-
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker3.ValueChanged
         calcularDias(1)
@@ -1436,6 +1429,30 @@ Public Class Nomina
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Label23_Click(sender As Object, e As EventArgs) Handles Label23.Click
+
+    End Sub
+
+    Private Sub ValidarCalculos_Click(sender As Object, e As EventArgs) Handles ValidarCalculos.Click
+
+    End Sub
+
+    Private Sub TextBox13_TextChanged(sender As Object, e As EventArgs) Handles TextBox13.TextChanged
+
+    End Sub
+
+    Private Sub TextBox22_TextChanged(sender As Object, e As EventArgs) Handles TextBox22.TextChanged
+
+    End Sub
+
+    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
+
+    End Sub
+
+    Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs) Handles TextBox14.TextChanged
 
     End Sub
 

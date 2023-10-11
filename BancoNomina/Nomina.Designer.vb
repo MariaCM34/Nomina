@@ -82,6 +82,7 @@ Partial Class Nomina
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ValidarCalculos = New System.Windows.Forms.Button()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -217,7 +218,7 @@ Partial Class Nomina
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(768, 708)
+        Me.TabPage5.Size = New System.Drawing.Size(861, 708)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Gestión"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -296,7 +297,7 @@ Partial Class Nomina
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(768, 708)
+        Me.TabPage4.Size = New System.Drawing.Size(861, 708)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Consolidado"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -407,7 +408,7 @@ Partial Class Nomina
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(768, 708)
+        Me.TabPage3.Size = New System.Drawing.Size(861, 708)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Prestaciones sociales"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -830,6 +831,7 @@ Partial Class Nomina
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.ValidarCalculos)
         Me.TabPage1.Controls.Add(Me.Label56)
         Me.TabPage1.Controls.Add(Me.TextBox6)
         Me.TabPage1.Controls.Add(Me.Label2)
@@ -891,17 +893,30 @@ Partial Class Nomina
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(768, 708)
+        Me.TabPage1.Size = New System.Drawing.Size(861, 708)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Colilla de pago"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'ValidarCalculos
+        '
+        Me.ValidarCalculos.BackColor = System.Drawing.Color.Green
+        Me.ValidarCalculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ValidarCalculos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ValidarCalculos.ForeColor = System.Drawing.Color.White
+        Me.ValidarCalculos.Location = New System.Drawing.Point(222, 623)
+        Me.ValidarCalculos.Name = "ValidarCalculos"
+        Me.ValidarCalculos.Size = New System.Drawing.Size(87, 30)
+        Me.ValidarCalculos.TabIndex = 468
+        Me.ValidarCalculos.Text = "Validar"
+        Me.ValidarCalculos.UseVisualStyleBackColor = False
         '
         'Label56
         '
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.ForeColor = System.Drawing.Color.Green
-        Me.Label56.Location = New System.Drawing.Point(402, 539)
+        Me.Label56.Location = New System.Drawing.Point(502, 538)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(126, 18)
         Me.Label56.TabIndex = 467
@@ -909,7 +924,7 @@ Partial Class Nomina
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(582, 537)
+        Me.TextBox6.Location = New System.Drawing.Point(682, 536)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(162, 20)
         Me.TextBox6.TabIndex = 23
@@ -919,7 +934,7 @@ Partial Class Nomina
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(408, 383)
+        Me.Label2.Location = New System.Drawing.Point(508, 382)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(126, 18)
         Me.Label2.TabIndex = 465
@@ -927,7 +942,7 @@ Partial Class Nomina
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(512, 89)
+        Me.TextBox2.Location = New System.Drawing.Point(612, 88)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(237, 20)
@@ -938,7 +953,7 @@ Partial Class Nomina
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(408, 91)
+        Me.Label1.Location = New System.Drawing.Point(508, 90)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 18)
         Me.Label1.TabIndex = 464
@@ -946,7 +961,7 @@ Partial Class Nomina
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(582, 513)
+        Me.TextBox7.Location = New System.Drawing.Point(682, 512)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(162, 20)
         Me.TextBox7.TabIndex = 22
@@ -956,7 +971,7 @@ Partial Class Nomina
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.Green
-        Me.Label27.Location = New System.Drawing.Point(405, 11)
+        Me.Label27.Location = New System.Drawing.Point(505, 10)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(86, 18)
         Me.Label27.TabIndex = 460
@@ -966,7 +981,7 @@ Partial Class Nomina
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(579, 634)
+        Me.Label26.Location = New System.Drawing.Point(679, 633)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(19, 20)
         Me.Label26.TabIndex = 459
@@ -976,7 +991,7 @@ Partial Class Nomina
         '
         Me.Label77.AutoSize = True
         Me.Label77.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label77.Location = New System.Drawing.Point(564, 169)
+        Me.Label77.Location = New System.Drawing.Point(664, 168)
         Me.Label77.Name = "Label77"
         Me.Label77.Size = New System.Drawing.Size(47, 16)
         Me.Label77.TabIndex = 458
@@ -984,28 +999,28 @@ Partial Class Nomina
         '
         'TextBox21
         '
-        Me.TextBox21.Location = New System.Drawing.Point(586, 383)
+        Me.TextBox21.Location = New System.Drawing.Point(686, 382)
         Me.TextBox21.Name = "TextBox21"
         Me.TextBox21.Size = New System.Drawing.Size(162, 20)
         Me.TextBox21.TabIndex = 18
         '
         'TextBox22
         '
-        Me.TextBox22.Location = New System.Drawing.Point(586, 357)
+        Me.TextBox22.Location = New System.Drawing.Point(686, 356)
         Me.TextBox22.Name = "TextBox22"
         Me.TextBox22.Size = New System.Drawing.Size(162, 20)
         Me.TextBox22.TabIndex = 17
         '
         'TextBox15
         '
-        Me.TextBox15.Location = New System.Drawing.Point(582, 563)
+        Me.TextBox15.Location = New System.Drawing.Point(682, 562)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.Size = New System.Drawing.Size(162, 20)
         Me.TextBox15.TabIndex = 24
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(582, 610)
+        Me.TextBox16.Location = New System.Drawing.Point(682, 609)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.ReadOnly = True
         Me.TextBox16.Size = New System.Drawing.Size(162, 20)
@@ -1013,7 +1028,7 @@ Partial Class Nomina
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(582, 588)
+        Me.TextBox17.Location = New System.Drawing.Point(682, 587)
         Me.TextBox17.Name = "TextBox17"
         Me.TextBox17.ReadOnly = True
         Me.TextBox17.Size = New System.Drawing.Size(162, 20)
@@ -1021,7 +1036,7 @@ Partial Class Nomina
         '
         'TextBox19
         '
-        Me.TextBox19.Location = New System.Drawing.Point(582, 490)
+        Me.TextBox19.Location = New System.Drawing.Point(682, 489)
         Me.TextBox19.Name = "TextBox19"
         Me.TextBox19.ReadOnly = True
         Me.TextBox19.Size = New System.Drawing.Size(162, 20)
@@ -1029,7 +1044,7 @@ Partial Class Nomina
         '
         'TextBox20
         '
-        Me.TextBox20.Location = New System.Drawing.Point(582, 468)
+        Me.TextBox20.Location = New System.Drawing.Point(682, 467)
         Me.TextBox20.Name = "TextBox20"
         Me.TextBox20.ReadOnly = True
         Me.TextBox20.Size = New System.Drawing.Size(162, 20)
@@ -1037,7 +1052,7 @@ Partial Class Nomina
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(586, 410)
+        Me.TextBox12.Location = New System.Drawing.Point(686, 409)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.ReadOnly = True
         Me.TextBox12.Size = New System.Drawing.Size(163, 20)
@@ -1045,35 +1060,35 @@ Partial Class Nomina
         '
         'TextBox13
         '
-        Me.TextBox13.Location = New System.Drawing.Point(586, 334)
+        Me.TextBox13.Location = New System.Drawing.Point(686, 333)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(162, 20)
         Me.TextBox13.TabIndex = 16
         '
         'TextBox14
         '
-        Me.TextBox14.Location = New System.Drawing.Point(586, 312)
+        Me.TextBox14.Location = New System.Drawing.Point(686, 311)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(162, 20)
         Me.TextBox14.TabIndex = 15
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(586, 290)
+        Me.TextBox9.Location = New System.Drawing.Point(686, 289)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(162, 20)
         Me.TextBox9.TabIndex = 14
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(586, 268)
+        Me.TextBox10.Location = New System.Drawing.Point(686, 267)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(162, 20)
         Me.TextBox10.TabIndex = 13
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(586, 245)
+        Me.TextBox8.Location = New System.Drawing.Point(686, 244)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
         Me.TextBox8.Size = New System.Drawing.Size(162, 20)
@@ -1081,7 +1096,7 @@ Partial Class Nomina
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(586, 223)
+        Me.TextBox3.Location = New System.Drawing.Point(686, 222)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(162, 20)
@@ -1089,7 +1104,7 @@ Partial Class Nomina
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(512, 63)
+        Me.TextBox5.Location = New System.Drawing.Point(612, 62)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(236, 20)
@@ -1097,7 +1112,7 @@ Partial Class Nomina
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(512, 39)
+        Me.TextBox4.Location = New System.Drawing.Point(612, 38)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(236, 20)
@@ -1106,7 +1121,7 @@ Partial Class Nomina
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(512, 10)
+        Me.TextBox1.Location = New System.Drawing.Point(612, 9)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 22)
         Me.TextBox1.TabIndex = 1
@@ -1116,7 +1131,7 @@ Partial Class Nomina
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.Green
-        Me.Label25.Location = New System.Drawing.Point(406, 358)
+        Me.Label25.Location = New System.Drawing.Point(506, 357)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(130, 18)
         Me.Label25.TabIndex = 204
@@ -1127,7 +1142,7 @@ Partial Class Nomina
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.Green
-        Me.Label24.Location = New System.Drawing.Point(402, 565)
+        Me.Label24.Location = New System.Drawing.Point(502, 564)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(154, 18)
         Me.Label24.TabIndex = 201
@@ -1137,7 +1152,7 @@ Partial Class Nomina
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(538, 168)
+        Me.Label23.Location = New System.Drawing.Point(638, 167)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(19, 16)
         Me.Label23.TabIndex = 200
@@ -1148,7 +1163,7 @@ Partial Class Nomina
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Green
-        Me.Label22.Location = New System.Drawing.Point(406, 167)
+        Me.Label22.Location = New System.Drawing.Point(506, 166)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(108, 18)
         Me.Label22.TabIndex = 199
@@ -1156,14 +1171,14 @@ Partial Class Nomina
         '
         'DateTimePicker3
         '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(512, 138)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(612, 137)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(236, 20)
         Me.DateTimePicker3.TabIndex = 10
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(512, 114)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(612, 113)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(236, 20)
         Me.DateTimePicker2.TabIndex = 9
@@ -1173,7 +1188,7 @@ Partial Class Nomina
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.Green
-        Me.Label45.Location = New System.Drawing.Point(406, 139)
+        Me.Label45.Location = New System.Drawing.Point(506, 138)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(47, 18)
         Me.Label45.TabIndex = 195
@@ -1184,7 +1199,7 @@ Partial Class Nomina
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.Green
-        Me.Label44.Location = New System.Drawing.Point(406, 116)
+        Me.Label44.Location = New System.Drawing.Point(506, 115)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(89, 18)
         Me.Label44.TabIndex = 194
@@ -1196,7 +1211,7 @@ Partial Class Nomina
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(311, 623)
+        Me.Button4.Location = New System.Drawing.Point(408, 623)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(87, 30)
         Me.Button4.TabIndex = 30
@@ -1209,7 +1224,7 @@ Partial Class Nomina
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(218, 623)
+        Me.Button3.Location = New System.Drawing.Point(315, 623)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(87, 30)
         Me.Button3.TabIndex = 29
@@ -1246,7 +1261,7 @@ Partial Class Nomina
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(604, 637)
+        Me.Label31.Location = New System.Drawing.Point(704, 636)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(19, 16)
         Me.Label31.TabIndex = 189
@@ -1257,7 +1272,7 @@ Partial Class Nomina
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Green
-        Me.Label21.Location = New System.Drawing.Point(404, 634)
+        Me.Label21.Location = New System.Drawing.Point(504, 633)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(113, 20)
         Me.Label21.TabIndex = 170
@@ -1268,7 +1283,7 @@ Partial Class Nomina
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Green
-        Me.Label20.Location = New System.Drawing.Point(401, 612)
+        Me.Label20.Location = New System.Drawing.Point(501, 611)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(129, 18)
         Me.Label20.TabIndex = 169
@@ -1279,7 +1294,7 @@ Partial Class Nomina
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Green
-        Me.Label19.Location = New System.Drawing.Point(401, 590)
+        Me.Label19.Location = New System.Drawing.Point(501, 589)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(81, 18)
         Me.Label19.TabIndex = 168
@@ -1290,7 +1305,7 @@ Partial Class Nomina
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Green
-        Me.Label18.Location = New System.Drawing.Point(402, 515)
+        Me.Label18.Location = New System.Drawing.Point(502, 514)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(133, 18)
         Me.Label18.TabIndex = 167
@@ -1301,7 +1316,7 @@ Partial Class Nomina
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Green
-        Me.Label17.Location = New System.Drawing.Point(402, 492)
+        Me.Label17.Location = New System.Drawing.Point(502, 491)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(62, 18)
         Me.Label17.TabIndex = 166
@@ -1312,7 +1327,7 @@ Partial Class Nomina
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Green
-        Me.Label16.Location = New System.Drawing.Point(402, 467)
+        Me.Label16.Location = New System.Drawing.Point(502, 466)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(49, 18)
         Me.Label16.TabIndex = 165
@@ -1323,7 +1338,7 @@ Partial Class Nomina
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Green
-        Me.Label15.Location = New System.Drawing.Point(537, 438)
+        Me.Label15.Location = New System.Drawing.Point(637, 437)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(113, 20)
         Me.Label15.TabIndex = 164
@@ -1334,7 +1349,7 @@ Partial Class Nomina
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Green
-        Me.Label14.Location = New System.Drawing.Point(409, 412)
+        Me.Label14.Location = New System.Drawing.Point(509, 411)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(125, 18)
         Me.Label14.TabIndex = 163
@@ -1345,7 +1360,7 @@ Partial Class Nomina
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Green
-        Me.Label13.Location = New System.Drawing.Point(408, 336)
+        Me.Label13.Location = New System.Drawing.Point(508, 335)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(174, 18)
         Me.Label13.TabIndex = 162
@@ -1356,7 +1371,7 @@ Partial Class Nomina
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Green
-        Me.Label11.Location = New System.Drawing.Point(409, 314)
+        Me.Label11.Location = New System.Drawing.Point(509, 313)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(102, 18)
         Me.Label11.TabIndex = 161
@@ -1367,7 +1382,7 @@ Partial Class Nomina
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Green
-        Me.Label12.Location = New System.Drawing.Point(408, 293)
+        Me.Label12.Location = New System.Drawing.Point(508, 292)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(73, 18)
         Me.Label12.TabIndex = 160
@@ -1378,7 +1393,7 @@ Partial Class Nomina
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Green
-        Me.Label8.Location = New System.Drawing.Point(408, 270)
+        Me.Label8.Location = New System.Drawing.Point(508, 269)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(93, 18)
         Me.Label8.TabIndex = 159
@@ -1389,7 +1404,7 @@ Partial Class Nomina
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Green
-        Me.Label9.Location = New System.Drawing.Point(409, 247)
+        Me.Label9.Location = New System.Drawing.Point(509, 246)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(112, 18)
         Me.Label9.TabIndex = 158
@@ -1400,7 +1415,7 @@ Partial Class Nomina
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Green
-        Me.Label10.Location = New System.Drawing.Point(408, 225)
+        Me.Label10.Location = New System.Drawing.Point(508, 224)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(54, 18)
         Me.Label10.TabIndex = 157
@@ -1411,7 +1426,7 @@ Partial Class Nomina
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Green
-        Me.Label7.Location = New System.Drawing.Point(537, 194)
+        Me.Label7.Location = New System.Drawing.Point(637, 193)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(109, 20)
         Me.Label7.TabIndex = 156
@@ -1422,7 +1437,7 @@ Partial Class Nomina
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(408, 65)
+        Me.Label3.Location = New System.Drawing.Point(508, 64)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 18)
         Me.Label3.TabIndex = 153
@@ -1433,7 +1448,7 @@ Partial Class Nomina
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Green
-        Me.Label4.Location = New System.Drawing.Point(406, 38)
+        Me.Label4.Location = New System.Drawing.Point(506, 37)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(80, 18)
         Me.Label4.TabIndex = 152
@@ -1445,7 +1460,7 @@ Partial Class Nomina
         Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Location = New System.Drawing.Point(678, 6)
+        Me.Button14.Location = New System.Drawing.Point(778, 5)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(71, 30)
         Me.Button14.TabIndex = 2
@@ -1462,7 +1477,7 @@ Partial Class Nomina
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(394, 592)
+        Me.DataGridView1.Size = New System.Drawing.Size(489, 592)
         Me.DataGridView1.TabIndex = 147
         '
         'Documento
@@ -1505,7 +1520,7 @@ Partial Class Nomina
         Me.TabControl1.Location = New System.Drawing.Point(9, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 734)
+        Me.TabControl1.Size = New System.Drawing.Size(869, 734)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage2
@@ -1555,7 +1570,7 @@ Partial Class Nomina
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(768, 708)
+        Me.TabPage2.Size = New System.Drawing.Size(861, 708)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Cuenta de cobro"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -2012,7 +2027,7 @@ Partial Class Nomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(788, 687)
+        Me.ClientSize = New System.Drawing.Size(882, 687)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Nomina"
@@ -2208,4 +2223,5 @@ Partial Class Nomina
     Friend WithEvents Button18 As Button
     Friend WithEvents DateTimePicker7 As DateTimePicker
     Friend WithEvents AxAcroPDF5 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents ValidarCalculos As Button
 End Class
