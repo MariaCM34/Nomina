@@ -31,7 +31,7 @@ Partial Class Exportar
         Me.InicialDateExportation = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.FinalDate = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'Label2
@@ -128,19 +128,19 @@ Partial Class Exportar
         Me.Label4.TabIndex = 189
         Me.Label4.Text = "Fecha inicial"
         '
-        'DateTimePicker1
+        'FinalDate
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(190, 131)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(154, 20)
-        Me.DateTimePicker1.TabIndex = 190
+        Me.FinalDate.Location = New System.Drawing.Point(190, 131)
+        Me.FinalDate.Name = "FinalDate"
+        Me.FinalDate.Size = New System.Drawing.Size(154, 20)
+        Me.FinalDate.TabIndex = 190
         '
         'Exportar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(386, 220)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.FinalDate)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.InicialDateExportation)
@@ -168,5 +168,5 @@ Partial Class Exportar
     Friend WithEvents InicialDateExportation As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents FinalDate As DateTimePicker
 End Class

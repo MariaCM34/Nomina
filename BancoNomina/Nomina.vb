@@ -10,6 +10,7 @@ Public Class Nomina
     Dim empTodos As List(Of String) = New List(Of String)
     Dim documentos As List(Of Byte()) = New List(Of Byte())
     Dim auxTrans As Single
+    Dim salarioMin As Single
     Dim porSalud As Single
     Dim porPension As Single
     Public vrHrsDiurnas As Double
@@ -25,6 +26,7 @@ Public Class Nomina
     'Se ejecuta cuando la página se carga por primera vez
     Private Sub Nomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DateTimePicker3.Value = Today.AddDays(16)
+        DateTimePicker3.MinDate = DateTimePicker2.Value
         DateTimePicker1.Value = Today.AddDays(31)
         calcularDias(1)
         calcularDias(2)
@@ -47,9 +49,13 @@ Public Class Nomina
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker3.ValueChanged
         calcularDias(1)
+        If (Not TextBox3.Text.Equals("") And Not TextBox1.Text.Equals("")) Then
+            cargarDatosColilla(TextBox1.Text)
+        End If
     End Sub
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+        DateTimePicker3.MinDate = DateTimePicker2.Value
         calcularDias(1)
     End Sub
 
@@ -112,12 +118,12 @@ Public Class Nomina
 
     'Buscar liquidaciones
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-        limpiar(3)
         If Not cnx.execSelect("select numero_documento from hoja_de_vida where numero_documento = " & TextBox42.Text) = 0 Then
             cargarDatosPrestaciones(TextBox42.Text)
         Else
             MsgBox("No existe un empleado con el documento " & TextBox42.Text)
         End If
+
     End Sub
 
     'Calcular totales al entrar al formulario
@@ -182,11 +188,12 @@ Public Class Nomina
 
     'Método para buscar valores predeterminados
     Private Sub buscarValores()
-        Dim consulta As String = "select Aux_transporte, Salud, Pension from ValoresxAnio"
+        Dim consulta As String = "select Aux_transporte, Salud, Pension, Salario_minimo from ValoresxAnio"
         Dim datos As List(Of String) = cnx.execSelectVarios(consulta, False)
 
         If Not datos.Count() = 0 Then
             auxTrans = Convert.ToSingle(datos.ElementAt(0).ToString())
+            salarioMin = Convert.ToSingle(datos.ElementAt(3).ToString())
             porSalud = Convert.ToSingle(datos.ElementAt(1).ToString())
             porPension = Convert.ToSingle(datos.ElementAt(2).ToString())
         End If
@@ -201,7 +208,7 @@ Public Class Nomina
         If identificador = 1 Then
             fechaIni = DateTimePicker2.Value
             fechaFin = DateTimePicker3.Value
-            tiempo = (fechaFin - fechaIni).Days
+            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
             If Not (tiempo = 0) Then
                 Label23.Text = tiempo.ToString()
             Else
@@ -210,7 +217,7 @@ Public Class Nomina
         ElseIf identificador = 2 Then
             fechaIni = DateTimePicker4.Value
             fechaFin = DateTimePicker1.Value
-            tiempo = (fechaFin - fechaIni).Days
+            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
             If Not (tiempo = 0) Then
                 Label34.Text = tiempo.ToString()
             Else
@@ -219,7 +226,7 @@ Public Class Nomina
         Else
             fechaIni = DateTimePicker6.Value
             fechaFin = DateTimePicker5.Value
-            tiempo = (fechaFin - fechaIni).Days
+            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
             If Not (tiempo = 0) Then
                 Label62.Text = tiempo.ToString()
             Else
@@ -385,14 +392,12 @@ Public Class Nomina
                 TextBox4.Text = datos.ElementAt(0).ToString()
                 TextBox5.Text = datos.ElementAt(1).ToString()
                 TextBox2.Text = datos.ElementAt(2).ToString()
-                DateTimePicker3.Value = DateTimePicker2.Value.AddDays(15)
             End If
         ElseIf metodo = 2 Then 'Cuenta de cobro
             If Not datos.Count() = 0 Then
                 TextBox23.Text = datos.ElementAt(0).ToString()
                 TextBox18.Text = datos.ElementAt(1).ToString()
                 TextBox34.Text = datos.ElementAt(2).ToString()
-                DateTimePicker1.Value = DateTimePicker4.Value.AddDays(30)
             End If
 
             consulta = "select id, Por_concepto_de from Contrato where Nume_documento = " & documento
@@ -431,7 +436,7 @@ Public Class Nomina
                     cargarBasicos(documento, 1)
                     Dim basico As Double = Convert.ToDouble(TextBox2.Text)
                     TextBox3.Text = ((basico / 30) * Convert.ToInt16(Label23.Text)).ToString("F2")
-                    TextBox8.Text = auxTrans.ToString("F2")
+                    TextBox8.Text = If(basico > (Convert.ToDouble(salarioMin * 2)), 0, auxTrans / 30 * Convert.ToInt16(Label23.Text)).ToString("F2")
                     TextBox20.Text = (basico * (porSalud / 100)).ToString("F2")
                     TextBox19.Text = (basico * (porPension / 100)).ToString("F2")
 
@@ -496,7 +501,7 @@ Public Class Nomina
                 cargarBasicos(documento, 1)
                 Dim basico As Double = Convert.ToDouble(TextBox2.Text)
                 TextBox3.Text = ((basico / 30) * Convert.ToInt16(Label23.Text)).ToString("F2")
-                TextBox8.Text = auxTrans.ToString("F2")
+                TextBox8.Text = If(basico > (Convert.ToDouble(salarioMin * 2)), 0, auxTrans / 30 * Convert.ToInt16(Label23.Text)).ToString("F2")
                 TextBox20.Text = (basico * (porSalud / 100)).ToString("F2")
                 TextBox19.Text = (basico * (porPension / 100)).ToString("F2")
 
@@ -891,11 +896,9 @@ Public Class Nomina
 		            select 0
 	            end"
         dat = cnx.execSelect(consulta)
-        If Convert.ToInt16(dat) = 1 Then
-            calcularPrestaciones(4)
-        End If
+        calcularPrestaciones(4)
 
-        TextBox30.Text = prestamosPS(documento)
+            TextBox30.Text = prestamosPS(documento)
     End Sub
 
     'Método para calcular valores de prestaciones
@@ -920,8 +923,8 @@ Public Class Nomina
                 TextBox48.Text = ((cesantias * Convert.ToInt16(Label62.Text) * 0.12) / 360).ToString("F2")
                 TextBox47.Text = ((promNeto2 * Convert.ToInt16(Label62.Text)) / 720).ToString("F2")
         End Select
-        Label73.Text = (Convert.ToDouble(TextBox46.Text) + Convert.ToDouble(TextBox45.Text) +
-            Convert.ToDouble(TextBox48.Text) + Convert.ToDouble(TextBox47.Text)) - prestamosPS(TextBox42.Text)
+        Label73.Text = Convert.ToDouble(TextBox46.Text) + Convert.ToDouble(TextBox45.Text) +
+            Convert.ToDouble(TextBox48.Text) + Convert.ToDouble(TextBox47.Text) - prestamosPS(TextBox42.Text)
     End Sub
 
     'Método para cargar todos los links de los documentos
@@ -1437,6 +1440,111 @@ Public Class Nomina
     End Sub
 
     Private Sub ValidarCalculos_Click(sender As Object, e As EventArgs) Handles ValidarCalculos.Click
+        Dim bool As Boolean = False
+        Dim totalDeven As Double
+        Dim totalDeduc As Double
+        Dim netoPagar As Double
+        Dim lic As Single
+        Dim otrosDev As Single
+        Dim desc1 As String
+        Dim otrasDed As Single
+        Dim desc2 As String
+        Dim rete As Single
+        Dim hrsext As Single
+        Dim rec As Single
+        Dim inca As Single
+        Dim pres As Single
+
+        calcularDias(1)
+
+        If TextBox13.Text = "" Then
+            lic = 0
+        Else
+            lic = Convert.ToSingle(TextBox13.Text)
+        End If
+
+        If TextBox22.Text = "" Then
+            otrosDev = 0
+        Else
+            otrosDev = Convert.ToSingle(TextBox22.Text)
+        End If
+
+        If TextBox7.Text = "" Then
+            otrasDed = 0
+        Else
+            otrasDed = Convert.ToSingle(TextBox7.Text)
+        End If
+
+        If TextBox15.Text = "" Then
+            rete = 0
+        Else
+            rete = Convert.ToSingle(TextBox15.Text)
+        End If
+
+        If TextBox10.Text = "" Then
+            hrsext = 0
+        Else
+            hrsext = Convert.ToSingle(TextBox10.Text)
+        End If
+
+        If TextBox14.Text = "" Then
+            inca = 0
+        Else
+            inca = Convert.ToSingle(TextBox14.Text)
+        End If
+
+        If TextBox9.Text = "" Then
+            rec = 0
+        Else
+            rec = Convert.ToSingle(TextBox9.Text)
+        End If
+
+        If TextBox17.Text = "" Then
+            pres = 0
+        Else
+            pres = Convert.ToSingle(TextBox17.Text)
+        End If
+
+        If Not otrosDev = 0 Then
+            If TextBox21.Text = "" Then
+                MsgBox("Debe ingresar la descripción de otros devengados")
+            Else
+                If Not otrasDed = 0 Then
+                    If TextBox21.Text = "" Then
+                        MsgBox("Debe ingresar la descripción de otras deducciones")
+                    Else
+                        bool = True
+                    End If
+                Else
+                    bool = True
+                End If
+            End If
+        Else
+            If Not otrasDed = 0 Then
+                If TextBox21.Text = "" Then
+                    MsgBox("Debe ingresar la descripción de otros devengados")
+                Else
+                    bool = True
+                End If
+            Else
+                bool = True
+            End If
+        End If
+        If bool Then
+            totalDeven = If(TextBox3.Text.Equals(""), 0, Convert.ToSingle(TextBox3.Text)) + auxTrans + hrsext + rec + inca + lic + otrosDev
+            totalDeven = Math.Round(totalDeven, 2)
+
+            totalDeduc = If(TextBox20.Text.Equals(""), 0, Convert.ToSingle(TextBox20.Text)) + If(TextBox19.Text.Equals(""), 0, Convert.ToSingle(TextBox19.Text)) + otrasDed + rete + pres
+            totalDeduc = Math.Round(totalDeduc, 2)
+
+            netoPagar = totalDeven - totalDeduc
+
+            TextBox12.Text = totalDeven.ToString("F2")
+            TextBox16.Text = totalDeduc.ToString("F2")
+            Label31.Text = netoPagar.ToString("F2")
+
+
+        End If
 
     End Sub
 
@@ -1453,6 +1561,83 @@ Public Class Nomina
     End Sub
 
     Private Sub TextBox14_TextChanged(sender As Object, e As EventArgs) Handles TextBox14.TextChanged
+
+    End Sub
+
+    Private Sub ValidarCuenta_Click(sender As Object, e As EventArgs) Handles ValidarCuenta.Click
+        Dim bool As Boolean = False
+        Dim netoPagar As Double
+        Dim otrosDev As Single
+        Dim desc1 As String
+        Dim otrasDed As Single
+        Dim desc2 As String
+        Dim rete As Single
+        Dim pres As Single
+
+        If TextBox27.Text = "" Then
+            otrosDev = 0
+        Else
+            otrosDev = Convert.ToSingle(TextBox27.Text)
+        End If
+
+        If TextBox28.Text = "" Then
+            otrasDed = 0
+        Else
+            otrasDed = Convert.ToSingle(TextBox28.Text)
+        End If
+
+        If TextBox26.Text = "" Then
+            rete = 0
+        Else
+            rete = Convert.ToSingle(TextBox26.Text)
+        End If
+
+        If TextBox29.Text = "" Then
+            pres = 0
+        Else
+            pres = Convert.ToSingle(TextBox29.Text)
+        End If
+
+        If Not otrosDev = 0 Then
+            If TextBox25.Text = "" Then
+                MsgBox("Debe ingresar la descripción de otros devengados")
+            Else
+                If Not otrasDed = 0 Then
+                    If TextBox24.Text = "" Then
+                        MsgBox("Debe ingresar la descripción de otras deducciones")
+                    Else
+                        bool = True
+                    End If
+                Else
+                    bool = True
+                End If
+            End If
+        Else
+            If Not otrasDed = 0 Then
+                If TextBox25.Text = "" Then
+                    MsgBox("Debe ingresar la descripción de otras deducciones")
+                Else
+                    bool = True
+                End If
+            Else
+                bool = True
+            End If
+        End If
+
+        If bool Then 'Se puede guardar
+            Try
+                netoPagar = If(TextBox35.Text.Equals(0), 0, Convert.ToSingle(TextBox35.Text)) + otrosDev - otrasDed - rete - pres
+
+                Label38.Text = netoPagar.ToString("F2")
+            Catch ex As Exception
+                MsgBox("Hubo un problema verifique los campos")
+            End Try
+
+        End If
+        calcularDias(2)
+    End Sub
+
+    Private Sub TextBox35_TextChanged(sender As Object, e As EventArgs) Handles TextBox35.TextChanged
 
     End Sub
 

@@ -19,29 +19,30 @@ Public Class Exportar
             MsgBox("Debe insertar los valores")
         Else
             Dim nombre As String = TextBox1.Text.Trim()
-            Dim fecha As Date = InicialDateExportation.Text
+            Dim fechaInicial As Date = InicialDateExportation.Text
+            Dim fechaFinal As Date = FinalDate.Text
             Dim seleccion As Integer = ComboBox1.SelectedIndex
             Select Case seleccion
                 Case 0
                     'Excel
                     nombre = nombre
                     If plantilla = 1 Then
-                        exportarExcelColilla(nombre, fecha)
+                        exportarExcelColilla(nombre, fechaInicial, fechaFinal)
                     ElseIf plantilla = 2 Then
-                        exportarExcelCuenta(nombre, fecha)
+                        exportarExcelCuenta(nombre, fechaFinal)
                     Else
                         exportarExcelPrestaciones(nombre)
                     End If
                 Case 1
                     'Word
-                    exportarWord(nombre, plantilla, fecha)
+                    exportarWord(nombre, plantilla, fechaInicial, fechaFinal)
             End Select
         End If
     End Sub
 
 
     'Método para exportar datos a excel de colilla de pago
-    Private Sub exportarExcelColilla(nombre As String, fechaInicial As Date)
+    Private Sub exportarExcelColilla(nombre As String, fechaInicial As Date, fechaFinal As Date)
         Try
             Dim rutaAct As String = Path.Combine(Directory.GetCurrentDirectory(), "colillaDePago.xlsx")
             Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\" & nombre & ".xlsx"
@@ -57,7 +58,7 @@ Public Class Exportar
             Dim fecha As String
 
 
-            Dim consulta As String = consultarCantidadColilla(fechaInicial)
+            Dim consulta As String = consultarCantidadColilla(fechaInicial, fechaFinal)
 
             Dim datos As List(Of String) = cnx.execSelectVarios(consulta, False)
 
@@ -69,7 +70,7 @@ Public Class Exportar
                     Next
                 End If
 
-                consulta = consultarColilla(fechaInicial)
+                consulta = consultarColilla(fechaInicial, fechaFinal)
                 datos = cnx.execSelectVarios(consulta, False)
 
                 Dim contC As Integer = 6
@@ -178,7 +179,7 @@ Public Class Exportar
     End Sub
 
     'Método para exportar datos a excel de cuenta de cobro
-    Private Sub exportarExcelCuenta(nombre As String, fechaInicial As Date)
+    Private Sub exportarExcelCuenta(nombre As String, fechaFinal As Date)
         Try
             Dim rutaAct As String = Path.Combine(Directory.GetCurrentDirectory(), "cuentaDeCobro.xlsx")
             Dim ruta As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\" & nombre & ".xlsx"
@@ -194,7 +195,7 @@ Public Class Exportar
             Dim con As Integer = 1
             Dim sheet As String = "CUENTA"
 
-            Dim consulta As String = consultarCantidadCuenta(fechaInicial)
+            Dim consulta As String = consultarCantidadCuenta(fechaFinal)
             Dim datos As List(Of String) = cnx.execSelectVarios(consulta, False)
 
             If Not datos.Count() = 0 Then
@@ -211,7 +212,7 @@ Public Class Exportar
                         xlibro.Sheets(sheet).paste()
                     End If
 
-                    consulta = consultarCuenta(fechaInicial, datos.ElementAt(i))
+                    consulta = consultarCuenta(fechaFinal, datos.ElementAt(i))
                     Dim dat As List(Of String) = cnx.execSelectVarios(consulta, False)
                     fecha = "Fecha: " & dat.ElementAt(0)
 
@@ -583,9 +584,9 @@ Public Class Exportar
     End Function
 
     'Método para exportar datos a word
-    Private Sub exportarWord(nombre As String, int As Integer, fechaInicial As Date)
+    Private Sub exportarWord(nombre As String, int As Integer, fechaInicial As Date, fechaFinal As Date)
         If int = 1 Then
-            crearWordColilla(nombre, fechaInicial)
+            crearWordColilla(nombre, fechaInicial, fechaFinal)
         ElseIf int = 2 Then
             crearWordCuenta(nombre, fechaInicial)
         Else
@@ -594,7 +595,7 @@ Public Class Exportar
     End Sub
 
     'Método para exportar datos a excel de colilla de pago
-    Private Sub crearWordColilla(nombre As String, fechaInicial As String)
+    Private Sub crearWordColilla(nombre As String, fechaInicial As String, fechaFinal As String)
         Try
             Dim rutaAct As String = Path.Combine(Directory.GetCurrentDirectory(), "colillaDePago.xlsx")
             Dim rutaAct2 As String = Path.Combine(Directory.GetCurrentDirectory(), "Documento.docx")
@@ -625,7 +626,7 @@ Public Class Exportar
             Dim idcolilla As String
             Dim fecha As String
 
-            Dim consulta As String = consultarCantidadColilla(fechaInicial)
+            Dim consulta As String = consultarCantidadColilla(fechaInicial, fechaFinal)
             Dim datos As List(Of String) = cnx.execSelectVarios(consulta, False)
 
             If Not datos.Count() = 0 Then
@@ -636,7 +637,7 @@ Public Class Exportar
                     Next
                 End If
 
-                consulta = consultarColilla(fechaInicial)
+                consulta = consultarColilla(fechaInicial, fechaFinal)
                 datos = cnx.execSelectVarios(consulta, False)
 
                 Dim contC As Integer = 6
@@ -1506,10 +1507,7 @@ Public Class Exportar
     End Function
 
 #Region "Utils"
-    Private Function consultarColilla(fechaInicial As Date)
-
-        Dim fechaFinal As Date = DateAdd("d", 15, fechaInicial)
-
+    Private Function consultarColilla(fechaInicial As Date, fechaFinal As Date)
 
         Return "
                 select id_colilla_empleado, Fecha_inicial, Fecha_final, (Nombre + ' ' + Apellido) 
@@ -1519,31 +1517,29 @@ Public Class Exportar
                                     '" + Format(fechaInicial, "yyyy-MM-dd").ToString() + "' and Fecha_final <= '" + Format(fechaFinal, "yyyy-MM-dd").ToString() + "'"
     End Function
 
-    Private Function consultarCantidadColilla(fechaInicial As Date)
-
-        Dim fechaFinal As Date = DateAdd("d", 15, fechaInicial)
+    Private Function consultarCantidadColilla(fechaInicial As Date, fechaFinal As Date)
 
         Return "select COUNT(id) from Colilla_pago where Fecha_inicial >=
                                     '" + Format(fechaInicial, "yyyy-MM-dd").ToString() + "' and Fecha_final <= '" + Format(fechaFinal, "yyyy-MM-dd").ToString() + "'"
     End Function
 
-    Private Function consultarCantidadCuenta(fechaInicial As Date)
+    Private Function consultarCantidadCuenta(fechaFinal As Date)
         Return "select distinct(Numero_documento) from Cuenta_cobro where 
-                                            DATEPART(month, Fecha_final)  = DATEPART(month,'" + Format(fechaInicial, "yyyy-MM-dd") + "') "
+                                            DATEPART(month, Fecha_final)  = DATEPART(month,'" + Format(fechaFinal, "yyyy-MM-dd") + "') "
     End Function
 
-    Private Function consultarCuenta(fechaInicial As Date, documento As String)
+    Private Function consultarCuenta(fechaFinal As Date, documento As String)
         Return "select cc.Fecha_final,
                         (h.nombre + ' ' + h.apellido) nombre, h.Numero_documento, h.direccion, h.Telefono, 
                         d.nombre dpto, m.nombre ciudad, cc.Concepto_de, convert(integer,cc.Basico) from Cuenta_cobro cc inner join
                         Hoja_de_vida h on cc.Numero_documento = h.Numero_documento inner join Contrato co on 
                         co.Nume_documento = h.Numero_documento inner join Municipios m on h.Ciudad = m.id inner 
                         join Departamentos d on m.departamento_id = d.id where 
-                                            DATEPART(month, Fecha_final)  = DATEPART(month,'" + Format(fechaInicial, "yyyy-MM-dd") + "') and h.Numero_documento = '" + documento + "'"
+                                            DATEPART(month, Fecha_final)  = DATEPART(month,'" + Format(fechaFinal, "yyyy-MM-dd") + "') and h.Numero_documento = '" + documento + "'"
 
     End Function
 #End Region
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles InicialDateExportation.ValueChanged
+    Private Sub InitialDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles InicialDateExportation.ValueChanged
 
     End Sub
 
@@ -1555,7 +1551,7 @@ Public Class Exportar
 
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+    Private Sub FinalDateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs) Handles FinalDate.ValueChanged
 
     End Sub
 End Class

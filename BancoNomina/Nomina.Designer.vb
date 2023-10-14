@@ -195,6 +195,7 @@ Partial Class Nomina
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label54 = New System.Windows.Forms.Label()
+        Me.ValidarCuenta = New System.Windows.Forms.Button()
         Me.TabPage5.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.AxAcroPDF5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1525,6 +1526,7 @@ Partial Class Nomina
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.ValidarCuenta)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
         Me.TabPage2.Controls.Add(Me.TextBox28)
         Me.TabPage2.Controls.Add(Me.TextBox27)
@@ -2023,6 +2025,19 @@ Partial Class Nomina
         Me.Label54.TabIndex = 499
         Me.Label54.Text = "Contrato"
         '
+        'ValidarCuenta
+        '
+        Me.ValidarCuenta.BackColor = System.Drawing.Color.Green
+        Me.ValidarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ValidarCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ValidarCuenta.ForeColor = System.Drawing.Color.White
+        Me.ValidarCuenta.Location = New System.Drawing.Point(469, 604)
+        Me.ValidarCuenta.Name = "ValidarCuenta"
+        Me.ValidarCuenta.Size = New System.Drawing.Size(87, 30)
+        Me.ValidarCuenta.TabIndex = 553
+        Me.ValidarCuenta.Text = "Validar"
+        Me.ValidarCuenta.UseVisualStyleBackColor = False
+        '
         'Nomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2224,4 +2239,5 @@ Partial Class Nomina
     Friend WithEvents DateTimePicker7 As DateTimePicker
     Friend WithEvents AxAcroPDF5 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents ValidarCalculos As Button
+    Friend WithEvents ValidarCuenta As Button
 End Class

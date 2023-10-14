@@ -168,7 +168,6 @@
     <Compile Include="HojaVida.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hoja_de_vida.vb" />
     <Compile Include="HorasExtras.Designer.vb">
       <DependentUpon>HorasExtras.vb</DependentUpon>
     </Compile>
