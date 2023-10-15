@@ -314,6 +314,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Viewmodel\HojadevidaViewModel.vb" />
+    <Compile Include="Viewmodel\PrestamoViewModel.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ActualizarAnexo.resx">

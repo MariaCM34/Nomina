@@ -74,6 +74,88 @@ Public Class Prestamo
         Return fec
     End Function
 
+    Private Function BuscarPrestamosActivos()
+        Dim query As String = "Select hv.Numero_Documento as Documento, hv.Nombre, hv.Apellido, p.Valor_prestamo, p.Fecha_fin_prestamo AS Fecha_Fin from Hoja_de_vida hv
+                                INNER JOIN Prestamos p ON hv.Numero_documento = p.Num_documento
+                                WHERE Fecha_fin_prestamo > GETDATE()
+                                ORDER BY p.Fecha_fin_prestamo"
+
+        Return cnx.execSelectListPrestamoActivo(query)
+    End Function
+
+    Private Sub OrganizarListaPrestamo()
+        ' Obtiene la lista de empleados activos
+        Dim prestamosActivos As List(Of PrestamoViewModel) = BuscarPrestamosActivos()
+        Try
+            If (prestamosActivos.Count < 0) Then
+                MsgBox("No se encuentran prestamos activos.")
+                Return
+            End If
+
+            For Each prestamo In prestamosActivos
+                PrestamosGrid.Rows.Add(
+                    prestamo.Documento,
+                    prestamo.Nombre,
+                    prestamo.Apellido,
+                    prestamo.FechaFin
+                    )
+            Next
+        Catch ex As Exception
+            MsgBox("Hubo un Error, intentalo más tarde")
+        End Try
+
+    End Sub
+
+    Private Sub ExportarListaPrestamos()
+        Try
+            Dim save As New SaveFileDialog
+            Dim ruta As String
+            Dim xlApp As Object = CreateObject("Excel.Application")
+            Dim pth As String = ""
+            Dim xlwb As Object = xlApp.WorkBooks.add
+            Dim xlws As Object = xlwb.WorkSheets(1)
+            For c As Integer = 0 To PrestamosGrid.Columns.Count - 1
+                xlws.cells(1, c + 1).Value = PrestamosGrid.Columns(c).HeaderText
+            Next
+
+            For r As Integer = 0 To PrestamosGrid.RowCount - 1
+                For c As Integer = 0 To PrestamosGrid.Columns.Count - 1
+                    xlws.cells(r + 2, c + 1).value = Convert.ToString(PrestamosGrid.Item(c, r).Value)
+                Next
+            Next
+
+            Dim SaveFileDialog1 As SaveFileDialog = New SaveFileDialog
+            SaveFileDialog1.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            SaveFileDialog1.Filter = "Archivo Excel | *.xlsx"
+            SaveFileDialog1.FilterIndex = 2
+            If SaveFileDialog1.ShowDialog = DialogResult.OK Then
+                ruta = SaveFileDialog1.FileName
+                xlwb.saveas(ruta)
+                xlws = Nothing
+                xlwb = Nothing
+                xlApp.quit()
+                MsgBox("Se creo el archivo en " + ruta)
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+    Private Sub PrestamosGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PrestamosGrid.CellContentClick
+
+    End Sub
+
+    Private Sub ExportarPrestamos_Click(sender As Object, e As EventArgs) Handles ExportarPrestamos.Click
+        ExportarListaPrestamos()
+    End Sub
+
+    Private Sub BuscarPrestamos_Click_1(sender As Object, e As EventArgs) Handles BuscarPrestamos.Click
+        PrestamosGrid.Rows.Clear()
+        OrganizarListaPrestamo()
+    End Sub
+
 #End Region
 
 End Class

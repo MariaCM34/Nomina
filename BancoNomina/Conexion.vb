@@ -62,6 +62,27 @@ Public Class Conexion
         End Try
     End Function
 
+    Function execSelectListPrestamoActivo(consulta As String)
+        Try
+            conexion.Open()
+            Dim command = New SqlCommand(consulta, conexion)
+            Dim reader = command.ExecuteReader()
+            Dim prestamos = New List(Of PrestamoViewModel)
+            While reader.Read()
+                Dim Prestamo = New PrestamoViewModel()
+                Prestamo.Documento = reader("Documento")
+                Prestamo.Nombre = reader("Nombre")
+                Prestamo.Apellido = reader("Apellido")
+                Prestamo.FechaFin = reader("Fecha_Fin")
+                prestamos.Add(Prestamo)
+            End While
+            conexion.Close()
+            Return prestamos
+        Catch ex As Exception
+
+        End Try
+    End Function
+
     'Método para ejecutar select que retorna más de 1 valor
     Function execSelectVarios(consulta As String, esByte As Boolean)
         Try

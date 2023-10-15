@@ -221,7 +221,36 @@ Public Class HojaVida
 
     Private Sub ExportarListaActivos()
         Try
-            Dim ruta
+            Dim save As New SaveFileDialog
+            Dim ruta As String
+            Dim xlApp As Object = CreateObject("Excel.Application")
+            Dim pth As String = ""
+            Dim xlwb As Object = xlApp.WorkBooks.add
+            Dim xlws As Object = xlwb.WorkSheets(1)
+            For c As Integer = 0 To EmpleadosActivosGrid.Columns.Count - 1
+                xlws.cells(1, c + 1).Value = EmpleadosActivosGrid.Columns(c).HeaderText
+            Next
+
+            For r As Integer = 0 To EmpleadosActivosGrid.RowCount - 1
+                For c As Integer = 0 To EmpleadosActivosGrid.Columns.Count - 1
+                    xlws.cells(r + 2, c + 1).value = Convert.ToString(EmpleadosActivosGrid.Item(c, r).Value)
+                Next
+            Next
+
+            Dim SaveFileDialog1 As SaveFileDialog = New SaveFileDialog
+            SaveFileDialog1.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            SaveFileDialog1.Filter = "Archivo Excel | *.xlsx"
+            SaveFileDialog1.FilterIndex = 2
+            If SaveFileDialog1.ShowDialog = DialogResult.OK Then
+                ruta = SaveFileDialog1.FileName
+                xlwb.saveas(ruta)
+                xlws = Nothing
+                xlwb = Nothing
+                xlApp.quit()
+                MsgBox("Se creo el archivo en " + ruta)
+            End If
+
+
         Catch ex As Exception
 
         End Try
@@ -1188,6 +1217,7 @@ Public Class HojaVida
     End Sub
 
     Private Sub BuscarEmpleados_Click(sender As Object, e As EventArgs) Handles BuscarEmpleados.Click
+        EmpleadosActivosGrid.Rows.Clear()
         OrganizarListaEmpleadosActivos()
     End Sub
 

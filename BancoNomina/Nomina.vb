@@ -62,10 +62,18 @@ Public Class Nomina
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         calcularDias(2)
+        If (Not TextBox34.Text.Equals("")) Then
+            Dim basico As Double = Convert.ToDouble(TextBox34.Text)
+            TextBox35.Text = ((basico / 30) * Convert.ToInt16(Label34.Text)).ToString("F2")
+        End If
     End Sub
 
     Private Sub DateTimePicker4_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker4.ValueChanged
         calcularDias(2)
+        If (Not TextBox34.Text.Equals("")) Then
+            Dim basico As Double = Convert.ToDouble(TextBox34.Text)
+            TextBox35.Text = ((basico / 30) * Convert.ToInt16(Label34.Text)).ToString("F2")
+        End If
     End Sub
 
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
@@ -1626,7 +1634,10 @@ Public Class Nomina
 
         If bool Then 'Se puede guardar
             Try
+
                 netoPagar = If(TextBox35.Text.Equals(0), 0, Convert.ToSingle(TextBox35.Text)) + otrosDev - otrasDed - rete - pres
+                Dim basico As Double = Convert.ToDouble(TextBox34.Text)
+                TextBox35.Text = ((basico / 30) * Convert.ToInt16(Label34.Text)).ToString("F2")
 
                 Label38.Text = netoPagar.ToString("F2")
             Catch ex As Exception
