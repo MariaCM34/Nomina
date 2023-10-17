@@ -50,6 +50,7 @@ Partial Class Prestamo
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.PrestamosActivos.SuspendLayout()
@@ -60,10 +61,11 @@ Partial Class Prestamo
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.PrestamosActivos)
-        Me.TabControl1.Location = New System.Drawing.Point(2, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 15)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(438, 558)
+        Me.TabControl1.Size = New System.Drawing.Size(584, 687)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -86,10 +88,11 @@ Partial Class Prestamo
         Me.TabPage1.Controls.Add(Me.Label47)
         Me.TabPage1.Controls.Add(Me.TextBox3)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(430, 532)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Size = New System.Drawing.Size(576, 658)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Solicitar préstamo"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -98,9 +101,10 @@ Partial Class Prestamo
         '
         Me.Label77.AutoSize = True
         Me.Label77.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label77.Location = New System.Drawing.Point(216, 302)
+        Me.Label77.Location = New System.Drawing.Point(288, 372)
+        Me.Label77.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(47, 16)
+        Me.Label77.Size = New System.Drawing.Size(58, 20)
         Me.Label77.TabIndex = 466
         Me.Label77.Text = "día(s)"
         '
@@ -108,9 +112,10 @@ Partial Class Prestamo
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(190, 301)
+        Me.Label23.Location = New System.Drawing.Point(253, 370)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(19, 16)
+        Me.Label23.Size = New System.Drawing.Size(24, 20)
         Me.Label23.TabIndex = 465
         Me.Label23.Text = "..."
         '
@@ -119,9 +124,10 @@ Partial Class Prestamo
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Deducción de nómina", "Liquidación", "Prestaciones sociales", "Pago directo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(197, 209)
+        Me.ComboBox1.Location = New System.Drawing.Point(263, 257)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(245, 24)
         Me.ComboBox1.TabIndex = 464
         '
         'Label7
@@ -129,9 +135,10 @@ Partial Class Prestamo
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(176, 208)
+        Me.Label7.Location = New System.Drawing.Point(235, 256)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(15, 20)
+        Me.Label7.Size = New System.Drawing.Size(20, 25)
         Me.Label7.TabIndex = 463
         Me.Label7.Text = "*"
         '
@@ -140,9 +147,10 @@ Partial Class Prestamo
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Green
-        Me.Label8.Location = New System.Drawing.Point(58, 208)
+        Me.Label8.Location = New System.Drawing.Point(77, 256)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(116, 18)
+        Me.Label8.Size = New System.Drawing.Size(149, 24)
         Me.Label8.TabIndex = 462
         Me.Label8.Text = "Método de pago"
         '
@@ -151,9 +159,10 @@ Partial Class Prestamo
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(139, 266)
+        Me.Label6.Location = New System.Drawing.Point(185, 327)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(15, 20)
+        Me.Label6.Size = New System.Drawing.Size(20, 25)
         Me.Label6.TabIndex = 461
         Me.Label6.Text = "*"
         '
@@ -161,9 +170,10 @@ Partial Class Prestamo
         '
         Me.DateTimePicker1.CustomFormat = "dd-MM-yyyy"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(197, 270)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(263, 332)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(245, 22)
         Me.DateTimePicker1.TabIndex = 460
         '
         'Label3
@@ -171,9 +181,10 @@ Partial Class Prestamo
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(58, 267)
+        Me.Label3.Location = New System.Drawing.Point(77, 329)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 18)
+        Me.Label3.Size = New System.Drawing.Size(102, 24)
         Me.Label3.TabIndex = 459
         Me.Label3.Text = "Fecha final"
         '
@@ -183,9 +194,10 @@ Partial Class Prestamo
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(219, 334)
+        Me.Button2.Location = New System.Drawing.Point(292, 411)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(87, 30)
+        Me.Button2.Size = New System.Drawing.Size(116, 37)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Cancelar"
         Me.Button2.UseVisualStyleBackColor = False
@@ -197,9 +209,10 @@ Partial Class Prestamo
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(131, 334)
+        Me.Button1.Location = New System.Drawing.Point(175, 411)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(82, 30)
+        Me.Button1.Size = New System.Drawing.Size(109, 37)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Guardar"
         Me.Button1.UseVisualStyleBackColor = False
@@ -209,9 +222,10 @@ Partial Class Prestamo
         Me.DateTimePicker4.CustomFormat = "dd-MM-yyyy"
         Me.DateTimePicker4.Enabled = False
         Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker4.Location = New System.Drawing.Point(197, 241)
+        Me.DateTimePicker4.Location = New System.Drawing.Point(263, 297)
+        Me.DateTimePicker4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(185, 20)
+        Me.DateTimePicker4.Size = New System.Drawing.Size(245, 22)
         Me.DateTimePicker4.TabIndex = 458
         '
         'Label5
@@ -219,9 +233,10 @@ Partial Class Prestamo
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Green
-        Me.Label5.Location = New System.Drawing.Point(58, 241)
+        Me.Label5.Location = New System.Drawing.Point(77, 297)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(116, 18)
+        Me.Label5.Size = New System.Drawing.Size(147, 24)
         Me.Label5.TabIndex = 457
         Me.Label5.Text = "Fecha préstamo"
         '
@@ -230,17 +245,19 @@ Partial Class Prestamo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(164, 177)
+        Me.Label1.Location = New System.Drawing.Point(219, 218)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(15, 20)
+        Me.Label1.Size = New System.Drawing.Size(20, 25)
         Me.Label1.TabIndex = 455
         Me.Label1.Text = "*"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(197, 179)
+        Me.TextBox1.Location = New System.Drawing.Point(263, 220)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(185, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(245, 22)
         Me.TextBox1.TabIndex = 2
         '
         'Label2
@@ -248,9 +265,10 @@ Partial Class Prestamo
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(58, 178)
+        Me.Label2.Location = New System.Drawing.Point(77, 219)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(109, 18)
+        Me.Label2.Size = New System.Drawing.Size(137, 24)
         Me.Label2.TabIndex = 454
         Me.Label2.Text = "Valor préstamo"
         '
@@ -259,17 +277,19 @@ Partial Class Prestamo
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label47.Location = New System.Drawing.Point(215, 152)
+        Me.Label47.Location = New System.Drawing.Point(287, 187)
+        Me.Label47.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(15, 20)
+        Me.Label47.Size = New System.Drawing.Size(20, 25)
         Me.Label47.TabIndex = 452
         Me.Label47.Text = "*"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(236, 153)
+        Me.TextBox3.Location = New System.Drawing.Point(315, 188)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(146, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(193, 22)
         Me.TextBox3.TabIndex = 1
         '
         'Label4
@@ -277,9 +297,10 @@ Partial Class Prestamo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Green
-        Me.Label4.Location = New System.Drawing.Point(58, 152)
+        Me.Label4.Location = New System.Drawing.Point(77, 187)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(161, 18)
+        Me.Label4.Size = New System.Drawing.Size(207, 24)
         Me.Label4.TabIndex = 451
         Me.Label4.Text = "Número de documento"
         '
@@ -288,9 +309,10 @@ Partial Class Prestamo
         Me.PrestamosActivos.Controls.Add(Me.ExportarPrestamos)
         Me.PrestamosActivos.Controls.Add(Me.BuscarPrestamos)
         Me.PrestamosActivos.Controls.Add(Me.PrestamosGrid)
-        Me.PrestamosActivos.Location = New System.Drawing.Point(4, 22)
+        Me.PrestamosActivos.Location = New System.Drawing.Point(4, 25)
+        Me.PrestamosActivos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PrestamosActivos.Name = "PrestamosActivos"
-        Me.PrestamosActivos.Size = New System.Drawing.Size(430, 532)
+        Me.PrestamosActivos.Size = New System.Drawing.Size(576, 658)
         Me.PrestamosActivos.TabIndex = 1
         Me.PrestamosActivos.Text = "Prestamos Activos"
         Me.PrestamosActivos.UseVisualStyleBackColor = True
@@ -301,9 +323,10 @@ Partial Class Prestamo
         Me.ExportarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ExportarPrestamos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExportarPrestamos.ForeColor = System.Drawing.Color.White
-        Me.ExportarPrestamos.Location = New System.Drawing.Point(172, 460)
+        Me.ExportarPrestamos.Location = New System.Drawing.Point(229, 566)
+        Me.ExportarPrestamos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ExportarPrestamos.Name = "ExportarPrestamos"
-        Me.ExportarPrestamos.Size = New System.Drawing.Size(87, 30)
+        Me.ExportarPrestamos.Size = New System.Drawing.Size(116, 37)
         Me.ExportarPrestamos.TabIndex = 153
         Me.ExportarPrestamos.Text = "Exportar"
         Me.ExportarPrestamos.UseVisualStyleBackColor = False
@@ -314,9 +337,10 @@ Partial Class Prestamo
         Me.BuscarPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BuscarPrestamos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BuscarPrestamos.ForeColor = System.Drawing.Color.White
-        Me.BuscarPrestamos.Location = New System.Drawing.Point(172, 31)
+        Me.BuscarPrestamos.Location = New System.Drawing.Point(229, 38)
+        Me.BuscarPrestamos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BuscarPrestamos.Name = "BuscarPrestamos"
-        Me.BuscarPrestamos.Size = New System.Drawing.Size(87, 30)
+        Me.BuscarPrestamos.Size = New System.Drawing.Size(116, 37)
         Me.BuscarPrestamos.TabIndex = 152
         Me.BuscarPrestamos.Text = "Buscar"
         Me.BuscarPrestamos.UseVisualStyleBackColor = False
@@ -325,46 +349,64 @@ Partial Class Prestamo
         '
         Me.PrestamosGrid.AllowUserToAddRows = False
         Me.PrestamosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PrestamosGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Documento, Me.Nombre, Me.Apellido, Me.Cargo})
-        Me.PrestamosGrid.Location = New System.Drawing.Point(12, 84)
+        Me.PrestamosGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Documento, Me.Nombre, Me.Apellido, Me.Cargo, Me.Total})
+        Me.PrestamosGrid.Location = New System.Drawing.Point(16, 103)
+        Me.PrestamosGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PrestamosGrid.MultiSelect = False
         Me.PrestamosGrid.Name = "PrestamosGrid"
         Me.PrestamosGrid.ReadOnly = True
         Me.PrestamosGrid.RowHeadersVisible = False
-        Me.PrestamosGrid.Size = New System.Drawing.Size(404, 353)
+        Me.PrestamosGrid.RowHeadersWidth = 51
+        Me.PrestamosGrid.Size = New System.Drawing.Size(539, 434)
         Me.PrestamosGrid.TabIndex = 151
         '
         'Documento
         '
         Me.Documento.HeaderText = "Documento"
+        Me.Documento.MinimumWidth = 6
         Me.Documento.Name = "Documento"
         Me.Documento.ReadOnly = True
+        Me.Documento.Width = 125
         '
         'Nombre
         '
         Me.Nombre.HeaderText = "Nombre(s)"
+        Me.Nombre.MinimumWidth = 6
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 125
         '
         'Apellido
         '
         Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.MinimumWidth = 6
         Me.Apellido.Name = "Apellido"
         Me.Apellido.ReadOnly = True
+        Me.Apellido.Width = 125
         '
         'Cargo
         '
         Me.Cargo.HeaderText = "Fecha final"
+        Me.Cargo.MinimumWidth = 6
         Me.Cargo.Name = "Cargo"
         Me.Cargo.ReadOnly = True
         '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.MinimumWidth = 6
+        Me.Total.Name = "Total"
+        Me.Total.ReadOnly = True
+        Me.Total.Width = 125
+        '
         'Prestamo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(438, 573)
+        Me.ClientSize = New System.Drawing.Size(584, 705)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Prestamo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Préstamo"
@@ -405,4 +447,5 @@ Partial Class Prestamo
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Apellido As DataGridViewTextBoxColumn
     Friend WithEvents Cargo As DataGridViewTextBoxColumn
+    Friend WithEvents Total As DataGridViewTextBoxColumn
 End Class

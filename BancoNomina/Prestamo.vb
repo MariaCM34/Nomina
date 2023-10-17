@@ -97,7 +97,8 @@ Public Class Prestamo
                     prestamo.Documento,
                     prestamo.Nombre,
                     prestamo.Apellido,
-                    prestamo.FechaFin
+                    prestamo.FechaFin,
+                    prestamo.Total
                     )
             Next
         Catch ex As Exception

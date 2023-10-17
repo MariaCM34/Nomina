@@ -5,7 +5,7 @@ Public Class Conexion
 
 #Region "Variables"
     'Creación de variables para la conexion a la BD
-    Dim cadena As String = "Data Source=MyDesktop;Initial Catalog=BancoHV;Integrated Security=True"
+    Dim cadena As String = "Data Source=DESKTOP-8J20P5K;Initial Catalog=BancoHV;Integrated Security=True"
     Dim context As New BancoHVEntities()
     Public conexion As New SqlConnection(cadena)
 
@@ -49,7 +49,7 @@ Public Class Conexion
                 hv.Nombre = reader("Nombre")
                 hv.Apellido = reader("Apellido")
                 hv.Ocupacion = reader("Ocupacion")
-                hv.FinContrato = reader("Fin_contrato")
+                hv.FinContrato = If(reader("Fin_contrato").ToString() = "", Nothing, reader("Fin_contrato"))
                 hv.SalarioBase = reader("Salario_base")
                 cvs.Add(hv)
             End While
@@ -74,6 +74,7 @@ Public Class Conexion
                 Prestamo.Nombre = reader("Nombre")
                 Prestamo.Apellido = reader("Apellido")
                 Prestamo.FechaFin = reader("Fecha_Fin")
+                Prestamo.Total = reader("Valor_prestamo")
                 prestamos.Add(Prestamo)
             End While
             conexion.Close()

@@ -763,7 +763,8 @@ Public Class Nomina
     'Método para calcular promedio neto de un empleado
     Function calcularPromNeto(documento As String, tipo As Integer)
         If tipo = 1 Then 'Sin deducciones
-            Return Convert.ToDecimal((cnx.execSelect("select format(avg(Neto_pagar), 'F0') from Colilla_pago where Numero_documento = " & documento)))
+            Dim value = (cnx.execSelect("select format(avg(Neto_pagar), 'F0') from Colilla_pago where Numero_documento = " & documento))
+            Return If(value.ToString().Equals(""), 0, Convert.ToDecimal(value))
         Else
             Return (Convert.ToDecimal(cnx.execSelect("select format(((avg(Neto_pagar)) - Aux_transporte - Salud - Pension), 'F0') 
                 from Colilla_pago where Numero_documento = " & documento & " group by Aux_transporte, Salud, Pension")))
@@ -1056,6 +1057,9 @@ Public Class Nomina
         Dim rec As Single
         Dim inca As Single
         Dim pres As Single
+        Dim dias As Single = Convert.ToSingle(Label23.Text)
+
+        calcularDias(1)
 
         If TextBox13.Text = "" Then
             lic = 0
@@ -1130,12 +1134,15 @@ Public Class Nomina
                 bool = True
             End If
         End If
+        If bool Then
 
-        If bool Then 'Se puede guardar
-            totalDeven = Convert.ToSingle(TextBox3.Text) + auxTrans + hrsext + rec + inca + lic + otrosDev
+            TextBox20.Text = Math.Round(If(TextBox20.Text.Equals(""), 0, (Convert.ToSingle(TextBox20.Text) / 30) * dias), 2)
+            TextBox19.Text = Math.Round(If(TextBox19.Text.Equals(""), 0, (Convert.ToSingle(TextBox19.Text) / 30) * dias), 2)
+
+            totalDeven = If(TextBox3.Text.Equals(""), 0, Convert.ToSingle(TextBox3.Text)) + If(TextBox8.Text.Equals(""), 0, Convert.ToSingle(TextBox8.Text)) + hrsext + rec + inca + lic + otrosDev
             totalDeven = Math.Round(totalDeven, 2)
 
-            totalDeduc = Convert.ToSingle(TextBox20.Text) + Convert.ToSingle(TextBox19.Text) + otrasDed + rete + pres
+            totalDeduc = (Convert.ToSingle(TextBox20.Text)) + Convert.ToSingle(TextBox19.Text) + otrasDed + rete + pres
             totalDeduc = Math.Round(totalDeduc, 2)
 
             netoPagar = totalDeven - totalDeduc
@@ -1143,6 +1150,8 @@ Public Class Nomina
             TextBox12.Text = totalDeven.ToString("F2")
             TextBox16.Text = totalDeduc.ToString("F2")
             Label31.Text = netoPagar.ToString("F2")
+
+
 
             Try
                 Dim idColilla As String = ultimaColilla(TextBox1.Text)
@@ -1462,6 +1471,7 @@ Public Class Nomina
         Dim rec As Single
         Dim inca As Single
         Dim pres As Single
+        Dim dias As Single = Convert.ToSingle(Label23.Text)
 
         calcularDias(1)
 
@@ -1539,10 +1549,14 @@ Public Class Nomina
             End If
         End If
         If bool Then
-            totalDeven = If(TextBox3.Text.Equals(""), 0, Convert.ToSingle(TextBox3.Text)) + auxTrans + hrsext + rec + inca + lic + otrosDev
+
+            TextBox20.Text = Math.Round(If(TextBox20.Text.Equals(""), 0, (Convert.ToSingle(TextBox20.Text) / 30) * dias), 2)
+            TextBox19.Text = Math.Round(If(TextBox19.Text.Equals(""), 0, (Convert.ToSingle(TextBox19.Text) / 30) * dias), 2)
+
+            totalDeven = If(TextBox3.Text.Equals(""), 0, Convert.ToSingle(TextBox3.Text)) + If(TextBox8.Text.Equals(""), 0, Convert.ToSingle(TextBox8.Text)) + hrsext + rec + inca + lic + otrosDev
             totalDeven = Math.Round(totalDeven, 2)
 
-            totalDeduc = If(TextBox20.Text.Equals(""), 0, Convert.ToSingle(TextBox20.Text)) + If(TextBox19.Text.Equals(""), 0, Convert.ToSingle(TextBox19.Text)) + otrasDed + rete + pres
+            totalDeduc = (Convert.ToSingle(TextBox20.Text)) + Convert.ToSingle(TextBox19.Text) + otrasDed + rete + pres
             totalDeduc = Math.Round(totalDeduc, 2)
 
             netoPagar = totalDeven - totalDeduc

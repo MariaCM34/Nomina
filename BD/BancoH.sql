@@ -58,7 +58,18 @@ CREATE TABLE Hoja_de_vida (
 	FOREIGN KEY (Lugar_nacimiento) REFERENCES Municipios(id)
 )
 
-select*from Hoja_de_vida
+SELECT hv.Numero_documento as Documento,hv.Nombre,hv.Apellido,
+                                hv.Ocupacion,c.Fin_contrato, c.Salario_base
+                               FROM Hoja_de_vida hv
+                               INNER JOIN Contrato c on hv.Numero_documento = c.nume_documento
+                               WHERE c.Actividad LIKE 'Activo'
+                               ORDER BY c.Fin_contrato
+
+delete from colilla_pago
+
+select format(avg(Neto_pagar), 'F0') from Colilla_pago where Numero_documento = 1001233854
+
+select*from colilla_pago
 
 CREATE TABLE Contrato (
 	id int identity (1, 1) primary key,
