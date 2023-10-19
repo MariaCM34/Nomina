@@ -63,10 +63,9 @@ Partial Class Actualizarcontrato
         Me.LinkLabel14.Enabled = False
         Me.LinkLabel14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel14.LinkColor = System.Drawing.Color.Green
-        Me.LinkLabel14.Location = New System.Drawing.Point(295, 530)
-        Me.LinkLabel14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel14.Location = New System.Drawing.Point(221, 431)
         Me.LinkLabel14.Name = "LinkLabel14"
-        Me.LinkLabel14.Size = New System.Drawing.Size(121, 24)
+        Me.LinkLabel14.Size = New System.Drawing.Size(95, 18)
         Me.LinkLabel14.TabIndex = 11
         Me.LinkLabel14.TabStop = True
         Me.LinkLabel14.Text = "Anexar otrosÍ"
@@ -77,10 +76,9 @@ Partial Class Actualizarcontrato
         Me.LinkLabel13.Enabled = False
         Me.LinkLabel13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel13.LinkColor = System.Drawing.Color.Green
-        Me.LinkLabel13.Location = New System.Drawing.Point(37, 530)
-        Me.LinkLabel13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel13.Location = New System.Drawing.Point(28, 431)
         Me.LinkLabel13.Name = "LinkLabel13"
-        Me.LinkLabel13.Size = New System.Drawing.Size(204, 24)
+        Me.LinkLabel13.Size = New System.Drawing.Size(160, 18)
         Me.LinkLabel13.TabIndex = 10
         Me.LinkLabel13.TabStop = True
         Me.LinkLabel13.Text = "Anexar contrato laboral"
@@ -91,10 +89,9 @@ Partial Class Actualizarcontrato
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(749, 530)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button7.Location = New System.Drawing.Point(562, 431)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(116, 37)
+        Me.Button7.Size = New System.Drawing.Size(87, 30)
         Me.Button7.TabIndex = 14
         Me.Button7.Text = "Cancelar"
         Me.Button7.UseVisualStyleBackColor = False
@@ -107,10 +104,9 @@ Partial Class Actualizarcontrato
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Location = New System.Drawing.Point(491, 530)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button8.Location = New System.Drawing.Point(368, 431)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(120, 37)
+        Me.Button8.Size = New System.Drawing.Size(90, 30)
         Me.Button8.TabIndex = 12
         Me.Button8.Text = "Actualizar"
         Me.Button8.UseVisualStyleBackColor = False
@@ -119,7 +115,6 @@ Partial Class Actualizarcontrato
         '
         Me.AxAcroPDF2.Enabled = True
         Me.AxAcroPDF2.Location = New System.Drawing.Point(8, 193)
-        Me.AxAcroPDF2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.AxAcroPDF2.Name = "AxAcroPDF2"
         Me.AxAcroPDF2.OcxState = CType(resources.GetObject("AxAcroPDF2.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxAcroPDF2.Size = New System.Drawing.Size(240, 240)
@@ -129,56 +124,50 @@ Partial Class Actualizarcontrato
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(201, 214)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label23.Location = New System.Drawing.Point(151, 174)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(24, 20)
+        Me.Label23.Size = New System.Drawing.Size(19, 16)
         Me.Label23.TabIndex = 106
         Me.Label23.Text = "..."
         '
         'DateTimePicker3
         '
         Me.DateTimePicker3.Enabled = False
-        Me.DateTimePicker3.Location = New System.Drawing.Point(603, 176)
-        Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(452, 143)
         Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(261, 22)
+        Me.DateTimePicker3.Size = New System.Drawing.Size(197, 20)
         Me.DateTimePicker3.TabIndex = 9
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Enabled = False
-        Me.DateTimePicker2.Location = New System.Drawing.Point(183, 176)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(137, 143)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(260, 22)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(196, 20)
         Me.DateTimePicker2.TabIndex = 8
         '
         'TextBox15
         '
         Me.TextBox15.Enabled = False
-        Me.TextBox15.Location = New System.Drawing.Point(183, 142)
-        Me.TextBox15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox15.Location = New System.Drawing.Point(137, 115)
         Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(237, 22)
+        Me.TextBox15.Size = New System.Drawing.Size(179, 20)
         Me.TextBox15.TabIndex = 6
         '
         'TextBox14
         '
         Me.TextBox14.Enabled = False
-        Me.TextBox14.Location = New System.Drawing.Point(181, 110)
-        Me.TextBox14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox14.Location = New System.Drawing.Point(136, 89)
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(388, 22)
+        Me.TextBox14.Size = New System.Drawing.Size(292, 20)
         Me.TextBox14.TabIndex = 5
         '
         'TextBox13
         '
         Me.TextBox13.Enabled = False
-        Me.TextBox13.Location = New System.Drawing.Point(181, 78)
-        Me.TextBox13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox13.Location = New System.Drawing.Point(136, 63)
         Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(388, 22)
+        Me.TextBox13.Size = New System.Drawing.Size(292, 20)
         Me.TextBox13.TabIndex = 4
         '
         'Label22
@@ -186,10 +175,9 @@ Partial Class Actualizarcontrato
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Green
-        Me.Label22.Location = New System.Drawing.Point(13, 207)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label22.Location = New System.Drawing.Point(10, 168)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(75, 24)
+        Me.Label22.Size = New System.Drawing.Size(58, 18)
         Me.Label22.TabIndex = 97
         Me.Label22.Text = "Tiempo"
         '
@@ -198,10 +186,9 @@ Partial Class Actualizarcontrato
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Green
-        Me.Label21.Location = New System.Drawing.Point(440, 144)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Location = New System.Drawing.Point(330, 117)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(149, 24)
+        Me.Label21.Size = New System.Drawing.Size(116, 18)
         Me.Label21.TabIndex = 96
         Me.Label21.Text = "Tiempo de corte"
         '
@@ -210,10 +197,9 @@ Partial Class Actualizarcontrato
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.Green
-        Me.Label45.Location = New System.Drawing.Point(452, 176)
-        Me.Label45.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label45.Location = New System.Drawing.Point(339, 143)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(136, 24)
+        Me.Label45.Size = New System.Drawing.Size(107, 18)
         Me.Label45.TabIndex = 95
         Me.Label45.Text = "Fin de contrato"
         '
@@ -222,10 +208,9 @@ Partial Class Actualizarcontrato
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.Green
-        Me.Label44.Location = New System.Drawing.Point(13, 176)
-        Me.Label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label44.Location = New System.Drawing.Point(10, 143)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(153, 24)
+        Me.Label44.Size = New System.Drawing.Size(121, 18)
         Me.Label44.TabIndex = 94
         Me.Label44.Text = "Inicio de contrato"
         '
@@ -234,10 +219,9 @@ Partial Class Actualizarcontrato
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.Green
-        Me.Label43.Location = New System.Drawing.Point(11, 144)
-        Me.Label43.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label43.Location = New System.Drawing.Point(8, 117)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(113, 24)
+        Me.Label43.Size = New System.Drawing.Size(90, 18)
         Me.Label43.TabIndex = 93
         Me.Label43.Text = "Salario base"
         '
@@ -246,10 +230,9 @@ Partial Class Actualizarcontrato
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.Color.Green
-        Me.Label42.Location = New System.Drawing.Point(13, 80)
-        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label42.Location = New System.Drawing.Point(10, 65)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(61, 24)
+        Me.Label42.Size = New System.Drawing.Size(49, 18)
         Me.Label42.TabIndex = 92
         Me.Label42.Text = "Cargo"
         '
@@ -258,10 +241,9 @@ Partial Class Actualizarcontrato
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label41.ForeColor = System.Drawing.Color.Green
-        Me.Label41.Location = New System.Drawing.Point(13, 112)
-        Me.Label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label41.Location = New System.Drawing.Point(10, 91)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(150, 24)
+        Me.Label41.Size = New System.Drawing.Size(118, 18)
         Me.Label41.TabIndex = 91
         Me.Label41.Text = "Por concepto de"
         '
@@ -270,10 +252,9 @@ Partial Class Actualizarcontrato
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Green
-        Me.Label37.Location = New System.Drawing.Point(11, 43)
-        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label37.Location = New System.Drawing.Point(8, 35)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(86, 24)
+        Me.Label37.Size = New System.Drawing.Size(66, 18)
         Me.Label37.TabIndex = 90
         Me.Label37.Text = "Actividad"
         '
@@ -282,10 +263,9 @@ Partial Class Actualizarcontrato
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label36.ForeColor = System.Drawing.Color.Green
-        Me.Label36.Location = New System.Drawing.Point(11, 10)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label36.Location = New System.Drawing.Point(8, 8)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(147, 24)
+        Me.Label36.Size = New System.Drawing.Size(116, 18)
         Me.Label36.TabIndex = 89
         Me.Label36.Text = "Tipo de contrato"
         '
@@ -295,22 +275,19 @@ Partial Class Actualizarcontrato
         Me.ComboBox5.Enabled = False
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"Fijo", "Indefinido", "Obra labor", "Prestación de servicios"})
-        Me.ComboBox5.Location = New System.Drawing.Point(183, 11)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox5.Location = New System.Drawing.Point(137, 9)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(388, 24)
+        Me.ComboBox5.Size = New System.Drawing.Size(292, 21)
         Me.ComboBox5.TabIndex = 2
         '
         'ComboBox6
         '
         Me.ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox6.Enabled = False
         Me.ComboBox6.FormattingEnabled = True
         Me.ComboBox6.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.ComboBox6.Location = New System.Drawing.Point(181, 44)
-        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox6.Location = New System.Drawing.Point(136, 36)
         Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(388, 24)
+        Me.ComboBox6.Size = New System.Drawing.Size(292, 21)
         Me.ComboBox6.TabIndex = 3
         '
         'ComboBox7
@@ -318,10 +295,9 @@ Partial Class Actualizarcontrato
         Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox7.Enabled = False
         Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(603, 143)
-        Me.ComboBox7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox7.Location = New System.Drawing.Point(452, 116)
         Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(261, 24)
+        Me.ComboBox7.Size = New System.Drawing.Size(197, 21)
         Me.ComboBox7.TabIndex = 7
         '
         'Button1
@@ -332,10 +308,9 @@ Partial Class Actualizarcontrato
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(619, 530)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(464, 431)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 37)
+        Me.Button1.Size = New System.Drawing.Size(92, 30)
         Me.Button1.TabIndex = 13
         Me.Button1.Text = "Eliminar"
         Me.Button1.UseVisualStyleBackColor = False
@@ -343,40 +318,36 @@ Partial Class Actualizarcontrato
         'CheckBox14
         '
         Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(276, 535)
-        Me.CheckBox14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CheckBox14.Location = New System.Drawing.Point(207, 435)
         Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(18, 17)
+        Me.CheckBox14.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox14.TabIndex = 498
         Me.CheckBox14.UseVisualStyleBackColor = True
         '
         'CheckBox13
         '
         Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(17, 535)
-        Me.CheckBox13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CheckBox13.Location = New System.Drawing.Point(13, 435)
         Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(18, 17)
+        Me.CheckBox13.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox13.TabIndex = 497
         Me.CheckBox13.UseVisualStyleBackColor = True
         '
         'TextBox39
         '
-        Me.TextBox39.Location = New System.Drawing.Point(336, 238)
-        Me.TextBox39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox39.Location = New System.Drawing.Point(252, 193)
         Me.TextBox39.Name = "TextBox39"
         Me.TextBox39.ReadOnly = True
-        Me.TextBox39.Size = New System.Drawing.Size(248, 22)
+        Me.TextBox39.Size = New System.Drawing.Size(187, 20)
         Me.TextBox39.TabIndex = 496
         Me.TextBox39.Visible = False
         '
         'TextBox38
         '
-        Me.TextBox38.Location = New System.Drawing.Point(41, 238)
-        Me.TextBox38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox38.Location = New System.Drawing.Point(31, 193)
         Me.TextBox38.Name = "TextBox38"
         Me.TextBox38.ReadOnly = True
-        Me.TextBox38.Size = New System.Drawing.Size(237, 22)
+        Me.TextBox38.Size = New System.Drawing.Size(179, 20)
         Me.TextBox38.TabIndex = 495
         Me.TextBox38.Visible = False
         '
@@ -384,10 +355,9 @@ Partial Class Actualizarcontrato
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(688, 57)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox1.Location = New System.Drawing.Point(516, 46)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(80, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(61, 21)
         Me.ComboBox1.TabIndex = 1
         '
         'Label1
@@ -395,10 +365,9 @@ Partial Class Actualizarcontrato
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(668, 31)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(501, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 24)
+        Me.Label1.Size = New System.Drawing.Size(88, 18)
         Me.Label1.TabIndex = 499
         Me.Label1.Text = "# Contrato"
         '
@@ -406,18 +375,17 @@ Partial Class Actualizarcontrato
         '
         Me.Label77.AutoSize = True
         Me.Label77.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label77.Location = New System.Drawing.Point(245, 214)
-        Me.Label77.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label77.Location = New System.Drawing.Point(184, 174)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(58, 20)
+        Me.Label77.Size = New System.Drawing.Size(47, 16)
         Me.Label77.TabIndex = 500
         Me.Label77.Text = "día(s)"
         '
         'Actualizarcontrato
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(875, 576)
+        Me.ClientSize = New System.Drawing.Size(656, 468)
         Me.Controls.Add(Me.Label77)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label1)
@@ -450,7 +418,6 @@ Partial Class Actualizarcontrato
         Me.Controls.Add(Me.Label37)
         Me.Controls.Add(Me.Label36)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Actualizarcontrato"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contrato"

@@ -934,6 +934,7 @@ Public Class HojaVida
     'Guardar contrato
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
+
         TextBox33.Text = TextBox3.Text
 
         If TextBox3.Text = "" Then
@@ -985,7 +986,7 @@ Public Class HojaVida
                 End If
 
                 Dim id As Integer
-                If TextBox33.ReadOnly Then 'Como está inhabilitado es porque se guardan todos los datos
+                If True Then 'Como está inhabilitado es porque se guardan todos los datos
                     If guardarHDV() Then 'Se guardaron los datos en hoja de vida
                         If guardarAnexos() Then 'Se guardaron los datos en anexos
                             crearLinksAnexo(TextBox33.Text)
@@ -1189,7 +1190,6 @@ Public Class HojaVida
 
     Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
         TabControl1.SelectedIndex = TabControl1.SelectedIndex - 1
-        Button8.Enabled = False
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged, TextBox1.TextChanged

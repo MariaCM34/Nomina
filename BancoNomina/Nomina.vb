@@ -28,8 +28,6 @@ Public Class Nomina
         DateTimePicker3.Value = Today.AddDays(16)
         DateTimePicker3.MinDate = DateTimePicker2.Value
         DateTimePicker1.Value = Today.AddDays(31)
-        calcularDias(1)
-        calcularDias(2)
     End Sub
 
     'Redirigirse a plantilla horas extras
@@ -48,7 +46,7 @@ Public Class Nomina
 
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker3.ValueChanged
-        calcularDias(1)
+        Label23.Text = calcularDias(DateTimePicker2.Value, DateTimePicker3.Value)
         If (Not TextBox3.Text.Equals("") And Not TextBox1.Text.Equals("")) Then
             cargarDatosColilla(TextBox1.Text)
         End If
@@ -56,12 +54,12 @@ Public Class Nomina
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
         DateTimePicker3.MinDate = DateTimePicker2.Value
-        calcularDias(1)
+        Label23.Text = calcularDias(DateTimePicker2.Value, DateTimePicker1.Value)
     End Sub
 
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-        calcularDias(2)
+        Label34.Text = calcularDias(DateTimePicker4.Value, DateTimePicker1.Value)
         If (Not TextBox34.Text.Equals("")) Then
             Dim basico As Double = Convert.ToDouble(TextBox34.Text)
             TextBox35.Text = ((basico / 30) * Convert.ToInt16(Label34.Text)).ToString("F2")
@@ -69,7 +67,7 @@ Public Class Nomina
     End Sub
 
     Private Sub DateTimePicker4_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker4.ValueChanged
-        calcularDias(2)
+        Label34.Text = calcularDias(DateTimePicker4.Value, DateTimePicker1.Value)
         If (Not TextBox34.Text.Equals("")) Then
             Dim basico As Double = Convert.ToDouble(TextBox34.Text)
             TextBox35.Text = ((basico / 30) * Convert.ToInt16(Label34.Text)).ToString("F2")
@@ -78,11 +76,11 @@ Public Class Nomina
 
     'Calcular días trabajados de acuerdo a las fechas de inicio y fin 
     Private Sub DateTimePicker5_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker5.ValueChanged
-        calcularDias(3)
+        Label62.Text = calcularDias(DateTimePicker6.Value, DateTimePicker5.Value)
     End Sub
 
     Private Sub DateTimePicker6_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker6.ValueChanged
-        calcularDias(3)
+        Label62.Text = calcularDias(DateTimePicker6.Value, DateTimePicker5.Value)
     End Sub
 
     'Tomar número documento al dar doble click en el grid
@@ -208,40 +206,13 @@ Public Class Nomina
     End Sub
 
     'Método para calcular días
-    Private Sub calcularDias(identificador As Integer)
-        Dim fechaIni As Date
-        Dim fechaFin As Date
+    Private Function calcularDias(fechaInicial As Date, fechaFinal As Date)
         Dim tiempo As Integer
-
-        If identificador = 1 Then
-            fechaIni = DateTimePicker2.Value
-            fechaFin = DateTimePicker3.Value
-            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
-            If Not (tiempo = 0) Then
-                Label23.Text = tiempo.ToString()
-            Else
-                Label23.Text = "..."
-            End If
-        ElseIf identificador = 2 Then
-            fechaIni = DateTimePicker4.Value
-            fechaFin = DateTimePicker1.Value
-            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
-            If Not (tiempo = 0) Then
-                Label34.Text = tiempo.ToString()
-            Else
-                Label34.Text = "..."
-            End If
-        Else
-            fechaIni = DateTimePicker6.Value
-            fechaFin = DateTimePicker5.Value
-            tiempo = DateDiff("d", fechaIni, fechaFin) + If(fechaIni.Date = fechaFin.Date, 1, 2)
-            If Not (tiempo = 0) Then
-                Label62.Text = tiempo.ToString()
-            Else
-                Label62.Text = "..."
-            End If
-        End If
-    End Sub
+        fechaInicial = Format(fechaInicial, "yyyy-MM-dd")
+        fechaFinal = Format(fechaFinal, "yyyy-MM-dd")
+        tiempo = DateDiff("d", fechaInicial, fechaFinal) + 1
+        Return tiempo
+    End Function
 
     'Método para asignar valor horas extras
     Function hrsExtras(Total As Double)
@@ -435,7 +406,7 @@ Public Class Nomina
                                     where Numero_documento = " & documento & " order by id_colilla_empleado desc"
         Dim dat As List(Of String) = cnx.execSelectVarios(consulta, False)
 
-        If dat.Count() = 0 Then 'No tiene ninguna colilla de pago
+        If True Then 'No tiene ninguna colilla de pago
             consulta = "select Tipo_Contrato from Contrato where Nume_documento = " & documento
             Dim tipo As String = cnx.execSelect(consulta)
             If Not tipo = "0" Then
@@ -454,67 +425,6 @@ Public Class Nomina
                 End If
             Else
                 MsgBox("Documento no encontrado")
-            End If
-        ElseIf dat.Count() = 1 Then 'Tiene una colilla solamente
-            consulta = "if ((select DATEPART(month, Fecha_inicial) from Colilla_pago where id_colilla_empleado = " &
-                                 dat.ElementAt(0) & " and Numero_documento = " & documento & ") = (select DATEPART(month, GETDATE())))
-	                        select 1
-                        else
-	                        select 0"
-            If cnx.execSelect(consulta) = 1 Then 'Si tiene la última colilla del mes
-                consulta = "select * from Colilla_pago where id_colilla_empleado = " & dat.ElementAt(0)
-                Dim emple As List(Of String) = cnx.execSelectVarios(consulta, False)
-
-                If Not emple.Count() = 0 Then
-                    'Pasar fecha a formato corto para almacenarlas y luego a largo otra vez
-                    DateTimePicker2.Format = DateTimePickerFormat.Short
-                    DateTimePicker3.Format = DateTimePickerFormat.Short
-
-                    TextBox1.Text = emple.ElementAt(2)
-                    TextBox4.Text = emple.ElementAt(3)
-                    TextBox5.Text = emple.ElementAt(4)
-                    TextBox2.Text = emple.ElementAt(5)
-                    DateTimePicker2.Text = emple.ElementAt(6)
-                    DateTimePicker3.Text = emple.ElementAt(7)
-                    TextBox3.Text = emple.ElementAt(8)
-                    TextBox8.Text = emple.ElementAt(9)
-                    Horasextras.TextBox13.Text = emple.ElementAt(10)
-                    Horasextras.TextBox16.Text = emple.ElementAt(11)
-                    Horasextras.TextBox19.Text = emple.ElementAt(12)
-                    Horasextras.TextBox21.Text = emple.ElementAt(13)
-                    TextBox10.Text = emple.ElementAt(14)
-                    Recargos.TextBox13.Text = emple.ElementAt(15)
-                    Recargos.TextBox16.Text = emple.ElementAt(16)
-                    Recargos.TextBox19.Text = emple.ElementAt(17)
-                    TextBox9.Text = emple.ElementAt(18)
-                    TextBox14.Text = emple.ElementAt(19)
-                    TextBox13.Text = emple.ElementAt(20)
-                    TextBox22.Text = emple.ElementAt(21)
-                    TextBox21.Text = emple.ElementAt(22)
-                    TextBox12.Text = emple.ElementAt(23)
-                    TextBox20.Text = emple.ElementAt(24)
-                    TextBox19.Text = emple.ElementAt(25)
-                    TextBox7.Text = emple.ElementAt(26)
-                    TextBox6.Text = emple.ElementAt(27)
-                    TextBox15.Text = emple.ElementAt(28)
-                    TextBox17.Text = emple.ElementAt(29)
-                    TextBox16.Text = emple.ElementAt(30)
-                    Label31.Text = emple.ElementAt(31)
-
-                    DateTimePicker2.Format = DateTimePickerFormat.Long
-                    DateTimePicker3.Format = DateTimePickerFormat.Long
-                End If
-            Else
-                TextBox1.Text = documento
-                cargarBasicos(documento, 1)
-                Dim basico As Double = Convert.ToDouble(TextBox2.Text)
-                TextBox3.Text = ((basico / 30) * Convert.ToInt16(Label23.Text)).ToString("F2")
-                TextBox8.Text = If(basico > (Convert.ToDouble(salarioMin * 2)), 0, auxTrans / 30 * Convert.ToInt16(Label23.Text)).ToString("F2")
-                TextBox20.Text = (basico * (porSalud / 100)).ToString("F2")
-                TextBox19.Text = (basico * (porPension / 100)).ToString("F2")
-
-                consulta = "select sum(valor_prestamo) from Prestamos where Num_documento = " & documento
-                TextBox17.Text = cnx.execSelect(consulta)
             End If
         End If
     End Sub
@@ -1059,7 +969,7 @@ Public Class Nomina
         Dim pres As Single
         Dim dias As Single = Convert.ToSingle(Label23.Text)
 
-        calcularDias(1)
+        Label23.Text = calcularDias(DateTimePicker6.Value, DateTimePicker5.Value)
 
         If TextBox13.Text = "" Then
             lic = 0
@@ -1473,7 +1383,7 @@ Public Class Nomina
         Dim pres As Single
         Dim dias As Single = Convert.ToSingle(Label23.Text)
 
-        calcularDias(1)
+        Label23.Text = calcularDias(DateTimePicker2.Value, DateTimePicker3.Value)
 
         If TextBox13.Text = "" Then
             lic = 0
@@ -1595,7 +1505,7 @@ Public Class Nomina
         Dim desc2 As String
         Dim rete As Single
         Dim pres As Single
-
+        Label34.Text = calcularDias(DateTimePicker4.Value, DateTimePicker1.Value)
         If TextBox27.Text = "" Then
             otrosDev = 0
         Else
@@ -1659,10 +1569,18 @@ Public Class Nomina
             End Try
 
         End If
-        calcularDias(2)
+
     End Sub
 
     Private Sub TextBox35_TextChanged(sender As Object, e As EventArgs) Handles TextBox35.TextChanged
+
+    End Sub
+
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+
+    End Sub
+
+    Private Sub TextBox20_TextChanged(sender As Object, e As EventArgs) Handles TextBox20.TextChanged
 
     End Sub
 

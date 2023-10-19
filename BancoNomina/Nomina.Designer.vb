@@ -148,6 +148,7 @@ Partial Class Nomina
         Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ValidarCuenta = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -195,7 +196,6 @@ Partial Class Nomina
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.ValidarCuenta = New System.Windows.Forms.Button()
         Me.TabPage5.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.AxAcroPDF5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1577,6 +1577,19 @@ Partial Class Nomina
         Me.TabPage2.Text = "Cuenta de cobro"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'ValidarCuenta
+        '
+        Me.ValidarCuenta.BackColor = System.Drawing.Color.Green
+        Me.ValidarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ValidarCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ValidarCuenta.ForeColor = System.Drawing.Color.White
+        Me.ValidarCuenta.Location = New System.Drawing.Point(469, 604)
+        Me.ValidarCuenta.Name = "ValidarCuenta"
+        Me.ValidarCuenta.Size = New System.Drawing.Size(87, 30)
+        Me.ValidarCuenta.TabIndex = 553
+        Me.ValidarCuenta.Text = "Validar"
+        Me.ValidarCuenta.UseVisualStyleBackColor = False
+        '
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
@@ -2024,19 +2037,6 @@ Partial Class Nomina
         Me.Label54.Size = New System.Drawing.Size(66, 18)
         Me.Label54.TabIndex = 499
         Me.Label54.Text = "Contrato"
-        '
-        'ValidarCuenta
-        '
-        Me.ValidarCuenta.BackColor = System.Drawing.Color.Green
-        Me.ValidarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ValidarCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ValidarCuenta.ForeColor = System.Drawing.Color.White
-        Me.ValidarCuenta.Location = New System.Drawing.Point(469, 604)
-        Me.ValidarCuenta.Name = "ValidarCuenta"
-        Me.ValidarCuenta.Size = New System.Drawing.Size(87, 30)
-        Me.ValidarCuenta.TabIndex = 553
-        Me.ValidarCuenta.Text = "Validar"
-        Me.ValidarCuenta.UseVisualStyleBackColor = False
         '
         'Nomina
         '

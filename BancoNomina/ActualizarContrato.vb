@@ -33,7 +33,7 @@ Public Class Actualizarcontrato
             'Todos los datos son obligatorios en la BD
             cmm.Parameters.AddWithValue("@id", Convert.ToInt16(ComboBox1.SelectedItem))
             cmm.Parameters.AddWithValue("@Nume_documento", documento)
-            cmm.Parameters.AddWithValue("@Contrato_laboral", contrato)
+            cmm.Parameters.AddWithValue("@Contrato_laboral", If(contrato Is Nothing, Nothing, contrato))
             cmm.Parameters.AddWithValue("@Tipo_Contrato", ComboBox5.Text)
             cmm.Parameters.AddWithValue("@Actividad", ComboBox6.Text)
             cmm.Parameters.AddWithValue("@Cargo", TextBox13.Text)
@@ -132,12 +132,6 @@ Public Class Actualizarcontrato
     'Método para cargar ids de comunicados
     Function llenarComboId()
         ComboBox1.Items.Clear()
-        LinkLabel14.Enabled = False
-        TextBox14.Enabled = False
-        TextBox15.Enabled = False
-        TextBox13.Enabled = False
-        Button1.Enabled = False
-        Button8.Enabled = False
         AxAcroPDF2.LoadFile("none")
 
         Dim consulta As String = ("select id from contrato where Nume_documento = " & documento)
