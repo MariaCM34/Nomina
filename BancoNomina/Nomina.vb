@@ -28,6 +28,7 @@ Public Class Nomina
         DateTimePicker3.Value = Today.AddDays(16)
         DateTimePicker3.MinDate = DateTimePicker2.Value
         DateTimePicker1.Value = Today.AddDays(31)
+        buscarValores()
     End Sub
 
     'Redirigirse a plantilla horas extras
@@ -194,7 +195,7 @@ Public Class Nomina
 
     'Método para buscar valores predeterminados
     Private Sub buscarValores()
-        Dim consulta As String = "select Aux_transporte, Salud, Pension, Salario_minimo from ValoresxAnio"
+        Dim consulta As String = "select Aux_transporte, Salud, Pension, Salario_minimo from ValoresxAnio ORDER BY Anio desc"
         Dim datos As List(Of String) = cnx.execSelectVarios(consulta, False)
 
         If Not datos.Count() = 0 Then
