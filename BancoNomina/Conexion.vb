@@ -5,7 +5,7 @@ Public Class Conexion
 
 #Region "Variables"
     'Creación de variables para la conexion a la BD
-    Dim cadena As String = "Data Source=MyDesktop;Initial Catalog=BancoHV;Integrated Security=True"
+    Dim cadena As String = "Data Source=ESCRITORIOC2;Initial Catalog=BancoHV;Integrated Security=True"
     Dim context As New BancoHVEntities()
     Public conexion As New SqlConnection(cadena)
 
